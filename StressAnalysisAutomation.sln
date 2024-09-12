@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35208.52
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Stress Analysis Automation", "MyCAD\Stress Analysis Automation.csproj", "{7746AF10-EE54-4CFD-904B-55B371B5AF5C}"
 EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "Stress-Analysis-setup", "Stress-Analysis-setup\Stress-Analysis-setup.vdproj", "{ED1ED0B8-E668-4513-8EB3-362C88538695}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,8 @@ Global
 		{7746AF10-EE54-4CFD-904B-55B371B5AF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7746AF10-EE54-4CFD-904B-55B371B5AF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7746AF10-EE54-4CFD-904B-55B371B5AF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED1ED0B8-E668-4513-8EB3-362C88538695}.Debug|Any CPU.ActiveCfg = Debug
+		{ED1ED0B8-E668-4513-8EB3-362C88538695}.Release|Any CPU.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
