@@ -1,0 +1,8 @@
+﻿CREATE TABLE [dbo].[Table]
+(
+	[VerticeId] INT NOT NULL PRIMARY KEY IDENTITY, 
+    [X] FLOAT NULL, 
+    [Y] FLOAT NULL, 
+    [Z] FLOAT NULL, 
+    [D_2_C] FLOAT NULL
+)
