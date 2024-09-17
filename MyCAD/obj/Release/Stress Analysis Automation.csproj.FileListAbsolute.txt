@@ -466,3 +466,5 @@ C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCAD\obj\Re
 C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCAD\obj\Release\Stress A.AFA5F15F.Up2Date
 C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCAD\obj\Release\MyCAD.exe
 C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCAD\obj\Release\MyCAD.pdb
+C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCAD\bin\Release\x64\SQLite.Interop.dll
+C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCAD\bin\Release\x86\SQLite.Interop.dll
