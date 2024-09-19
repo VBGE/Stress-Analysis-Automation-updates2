@@ -1,0 +1,2 @@
+C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCustomActions\obj\Release\MyCustomActions.csproj.AssemblyReference.cache
+C:\Users\223139002\source\repos\Stress-Analysis-Automation-updates2\MyCustomActions\obj\Release\MyCustomActions.csproj.CoreCompileInputs.cache

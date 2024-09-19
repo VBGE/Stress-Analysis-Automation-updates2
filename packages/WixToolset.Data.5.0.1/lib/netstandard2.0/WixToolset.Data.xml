@@ -1,0 +1,3501 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WixToolset.Data</name>
+    </assembly>
+    <members>
+        <member name="F:WixToolset.Data.AccessModifier.Global">
+            <summary>
+            Indicates the identifier is globally visible to all other sections.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.AccessModifier.Library">
+            <summary>
+            Indicates the identifier is visible only to sections in the same library.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.AccessModifier.File">
+            <summary>
+            Indicates the identifier is visible only to sections in the same source file.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.AccessModifier.Section">
+            <summary>
+            Indicates the identifier is visible only to the section where it is defined.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.AccessModifier.Virtual">
+            <summary>
+            Indicates the identifier can be overridden by another symbol.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.AccessModifier.Override">
+            <summary>
+            Indicates the identifier overrides a virtual symbol.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.AccessModifierExtensions">
+            <summary>
+            Extensions for converting <c>AccessModifier</c> to and from strings optimally.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.AccessModifierExtensions.AsAccessModifier(System.String)">
+            <summary>
+            Converts a string to an <c>AccessModifier</c>.
+            </summary>
+            <param name="access">String value to convert.</param>
+            <returns>Converted <c>AccessModifier</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.AccessModifierExtensions.AsString(WixToolset.Data.AccessModifier)">
+            <summary>
+            Converts an <c>AccessModifier</c> to a string.
+            </summary>
+            <param name="access"><c>AccessModifier</c> value to convert.</param>
+            <returns>Converted string.</returns>
+        </member>
+        <member name="T:WixToolset.Data.Bind.BindVariable">
+            <summary>
+            Bind variable.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Bind.BindVariable.SourceLineNumbers">
+            <summary>
+            Gets or sets the source line number.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Bind.BindVariable.Id">
+            <summary>
+            Gets or sets the variable identifier.
+            </summary>
+            <value>The variable identifier.</value>
+        </member>
+        <member name="P:WixToolset.Data.Bind.BindVariable.Value">
+            <summary>
+            Gets or sets the variable's value.
+            </summary>
+            <value>The variable's value.</value>
+        </member>
+        <member name="P:WixToolset.Data.Bind.BindVariable.Overridable">
+            <summary>
+            Gets or sets whether this variable is overridable.
+            </summary>
+            <value>Whether this variable is overridable.</value>
+        </member>
+        <member name="T:WixToolset.Data.BundleCacheType">
+            <summary>
+            Keep, Remove, Force xml simple type.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.BundleCacheType.Keep">
+            <summary>The keep value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.BundleCacheType.Remove">
+            <summary>The remove value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.BundleCacheType.Force">
+            <summary>The force value.</summary>
+        </member>
+        <member name="T:WixToolset.Data.ComplexReferenceChildType">
+            <summary>
+            Types of children in complex refernece.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.Unknown">
+            <summary>Unknown complex reference type, default and invalid.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.Component">
+            <summary>Component child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.Feature">
+            <summary>Feature child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.ComponentGroup">
+            <summary>ComponentGroup child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.FeatureGroup">
+            <summary>FeatureGroup child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.Module">
+            <summary>Module child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.Payload">
+            <summary>Payload child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.PayloadGroup">
+            <summary>PayloadGroup child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.Package">
+            <summary>Package child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.PackageGroup">
+            <summary>PackageGroup child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.PackagePayload">
+            <summary>PackagePayload child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.PatchFamily">
+            <summary>PatchFamily child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.PatchFamilyGroup">
+            <summary>PatchFamilyGroup child of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceChildType.ContainerPackage">
+            <summary>ContainerPackage child of complex reference.</summary>
+        </member>
+        <member name="T:WixToolset.Data.ComplexReferenceParentType">
+            <summary>
+            Types of parents in complex reference.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Unknown">
+            <summary>Unknown complex reference type, default and invalid.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Feature">
+            <summary>Feature parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.ComponentGroup">
+            <summary>ComponentGroup parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.FeatureGroup">
+            <summary>FeatureGroup parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Module">
+            <summary>Module parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Product">
+            <summary>Product parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.PayloadGroup">
+            <summary>PayloadGroup parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Package">
+            <summary>Package parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.PackageGroup">
+            <summary>PackageGroup parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Container">
+            <summary>Container parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Layout">
+            <summary>Layout parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.Patch">
+            <summary>Patch parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComplexReferenceParentType.PatchFamilyGroup">
+            <summary>PatchFamilyGroup parent of complex reference.</summary>
+        </member>
+        <member name="F:WixToolset.Data.ComponentKeyPathType.Directory">
+            <summary>
+            Folder as a key path.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.ComponentKeyPathType.File">
+            <summary>
+            File resource as a key path.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.ComponentKeyPathType.OdbcDataSource">
+            <summary>
+            ODBC data source as a key path.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.ComponentKeyPathType.Registry">
+            <summary>
+            A simple registry key acting as a key path.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.CompressionLevel">
+            <summary>
+            Compression level to use when creating cabinet.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.CompressionLevel.None">
+            <summary>Use no compression.</summary>
+        </member>
+        <member name="F:WixToolset.Data.CompressionLevel.Low">
+            <summary>Use low compression.</summary>
+        </member>
+        <member name="F:WixToolset.Data.CompressionLevel.Medium">
+            <summary>Use medium compression.</summary>
+        </member>
+        <member name="F:WixToolset.Data.CompressionLevel.High">
+            <summary>Use high compression.</summary>
+        </member>
+        <member name="F:WixToolset.Data.CompressionLevel.Mszip">
+            <summary>Use ms-zip compression.</summary>
+        </member>
+        <member name="F:WixToolset.Data.EmptyRule.MustHaveNonWhitespaceCharacters">
+            <summary>
+            The trimmed value cannot be empty.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.EmptyRule.CanBeWhitespaceOnly">
+            <summary>
+            The trimmed value can be empty, but the value itself cannot be empty.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.EmptyRule.CanBeEmpty">
+            <summary>
+            The value can be empty.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Identifier">
+            <summary>
+            Class to define the identifier and access for a symbol.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Identifier.Access">
+            <summary>
+            Access modifier for a symbol.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Identifier.Id">
+            <summary>
+            Identifier for the symbol.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Intermediate">
+            <summary>
+            Container class for an intermediate object.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.#ctor">
+            <summary>
+            Instantiate a new Intermediate.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Intermediate.Id">
+            <summary>
+            Get the id for the intermediate.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Intermediate.Level">
+            <summary>
+            Get the level of the intermediate.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Intermediate.Localizations">
+            <summary>
+            Get the localizations contained in this intermediate.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Intermediate.Sections">
+            <summary>
+            Get the sections contained in this intermediate.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(System.String,System.Boolean)">
+            <summary>
+            Loads an intermediate from a path on disk.
+            </summary>
+            <param name="path">Path to intermediate file saved on disk.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(System.Reflection.Assembly,System.String,System.Boolean)">
+            <summary>
+            Loads an intermediate from a stream.
+            </summary>
+            <param name="assembly">Assembly with intermediate embedded in resource stream.</param>
+            <param name="resourceName">Name of resource stream.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(System.Reflection.Assembly,System.String,WixToolset.Data.ISymbolDefinitionCreator,System.Boolean)">
+            <summary>
+            Loads an intermediate from a stream.
+            </summary>
+            <param name="assembly">Assembly with intermediate embedded in resource stream.</param>
+            <param name="resourceName">Name of resource stream.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediate.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(System.String,WixToolset.Data.ISymbolDefinitionCreator,System.Boolean)">
+            <summary>
+            Loads an intermediate from a path on disk.
+            </summary>
+            <param name="path">Path to intermediate file saved on disk.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediate.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(WixToolset.Data.WixOutput,System.Boolean)">
+            <summary>
+            Loads an intermediate from a WixOutput object.
+            </summary>
+            <param name="wixOutput">WixOutput object.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(WixToolset.Data.WixOutput,WixToolset.Data.ISymbolDefinitionCreator,System.Boolean)">
+            <summary>
+            Loads an intermediate from a WixOutput object.
+            </summary>
+            <param name="wixOutput">WixOutput object.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediate.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(System.Collections.Generic.IEnumerable{System.String})">
+            <summary>
+            Loads several intermediates from paths on disk using the same definitions.
+            </summary>
+            <param name="intermediateFiles">Paths to intermediate files saved on disk.</param>
+            <returns>Returns the loaded intermediates</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Load(System.Collections.Generic.IEnumerable{System.String},WixToolset.Data.ISymbolDefinitionCreator,System.Boolean)">
+            <summary>
+            Loads several intermediates from paths on disk using the same definitions.
+            </summary>
+            <param name="intermediateFiles">Paths to intermediate files saved on disk.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediates.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediates</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.AddSection(WixToolset.Data.IntermediateSection)">
+            <summary>
+            Adds a section to the intermedaite.
+            </summary>
+            <param name="section">Section to add to the intermediate.</param>
+            <returns>Section added to the intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.RemoveSection(WixToolset.Data.IntermediateSection)">
+            <summary>
+            Removes a section from the intermediate.
+            </summary>
+            <param name="section">Section to remove.</param>
+            <returns>True if the section was removed; otherwise false.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.UpdateLevel(System.String)">
+            <summary>
+            Updates the intermediate level to the specified level.
+            </summary>
+            <param name="level">Intermediate level.</param>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.HasLevel(System.String)">
+            <summary>
+            Returns whether a specifed intermediate level has been set for this intermediate.
+            </summary>
+            <param name="level">Intermediate level.</param>
+            <returns>True if the specifed intermediate level has been set for this intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Save(System.String)">
+            <summary>
+            Saves an intermediate to a path on disk.
+            </summary>
+            <param name="path">Path to save intermediate file to disk.</param>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.Save(WixToolset.Data.WixOutput)">
+            <summary>
+            Saves an intermediate to a WixOutput.
+            </summary>
+            <param name="wixout">Destination to save.</param>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.LoadIntermediate(WixToolset.Data.WixOutput,WixToolset.Data.ISymbolDefinitionCreator,System.Boolean)">
+            <summary>
+            Loads an intermediate from a WixOutput.
+            </summary>
+            <param name="wixout">Source to load from.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediate.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded intermediate.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.LoadJson(System.String,System.Uri,System.Boolean)">
+            <summary>
+            Loads json form of intermediate.
+            </summary>
+            <param name="json">Source to load from.</param>
+            <param name="baseUri">Path name of intermediate file.</param>
+            <param name="suppressVersionCheck">Suppress checking for wix.dll version mismatches.</param>
+            <returns>Returns the loaded json.</returns>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.LoadDefinitions(SimpleJson.JsonObject,WixToolset.Data.ISymbolDefinitionCreator)">
+            <summary>
+            Loads custom definitions in intermediate json into the creator.
+            </summary>
+            <param name="json">Json version of intermediate.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediate.</param>
+        </member>
+        <member name="M:WixToolset.Data.Intermediate.FinalizeLoad(SimpleJson.JsonObject,System.Uri,WixToolset.Data.ISymbolDefinitionCreator)">
+            <summary>
+            Loads the sections and localization for the intermediate.
+            </summary>
+            <param name="json">Json version of intermediate.</param>
+            <param name="baseUri">Path to the intermediate.</param>
+            <param name="creator">ISymbolDefinitionCreator to use when reconstituting the intermediate.</param>
+            <returns>The finalized intermediate.</returns>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateFieldPathValue.Embed">
+            <summary>
+            Indicates whether to embed the path to the file when the intermediate field is saved.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateFieldPathValue.BaseUri">
+            <summary>
+            Gets the base URI of the path field.
+            </summary>
+            <value>The base URI of the path field.</value>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateFieldPathValue.Path">
+            <summary>
+            Gets or sets the data for this field.
+            </summary>
+            <value>Data in the field.</value>
+        </member>
+        <member name="T:WixToolset.Data.IntermediateSection">
+            <summary>
+            Section in an intermediate file.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSection.#ctor(System.String,WixToolset.Data.SectionType,System.String)">
+            <summary>
+            Creates a new section as part of an intermediate.
+            </summary>
+            <param name="id">Identifier for section.</param>
+            <param name="type">Type of section.</param>
+            <param name="compilationId">Optional compilation identifier</param>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSection.Id">
+            <summary>
+            Gets the identifier for the section.
+            </summary>
+            <value>Section identifier.</value>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSection.Type">
+            <summary>
+            Gets the type of the section.
+            </summary>
+            <value>Type of section.</value>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSection.CompilationId">
+            <summary>
+            Gets and sets the identifier of the compilation of the source file containing the section.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSection.LibraryId">
+            <summary>
+            Gets and sets the identifier of the library that combined the section.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSection.Symbols">
+            <summary>
+            Symbols in the section.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSection.AddSymbol``1(``0)">
+            <summary>
+            Adds a symbol to the section.
+            </summary>
+            <typeparam name="T">Type of IntermediateSymbol to add to the section.</typeparam>
+            <param name="symbol">Symbol to add to the section.</param>
+            <returns>Symbol added to the section.</returns>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSection.AssignToLibrary(System.String)">
+            <summary>
+            Assigns the section to a library.
+            </summary>
+            <param name="libraryId">Identifier of the library.</param>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSection.RemoveSymbol(WixToolset.Data.IntermediateSymbol)">
+            <summary>
+            Removes a symbol from the section.
+            </summary>
+            <param name="symbol">Symbol to remove.</param>
+            <returns>True if the symbol was removed; otherwise false.</returns>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSection.Deserialize(WixToolset.Data.ISymbolDefinitionCreator,System.Uri,SimpleJson.JsonObject)">
+            <summary>
+            Parse a section from the JSON data.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.IntermediateSymbol">
+            <summary>
+            Intermediate symbol.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSymbol.#ctor(WixToolset.Data.IntermediateSymbolDefinition)">
+            <summary>
+            Creates an intermediate symbol.
+            </summary>
+            <param name="definition">Symbol definition.</param>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSymbol.#ctor(WixToolset.Data.IntermediateSymbolDefinition,WixToolset.Data.SourceLineNumber,WixToolset.Data.Identifier)">
+            <summary>
+            Creates an intermediate symbol with source line number and identifier. 
+            </summary>
+            <param name="definition">Symbol definition.</param>
+            <param name="sourceLineNumber">Source line number.</param>
+            <param name="id">Symbol identifier.</param>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSymbol.Definition">
+            <summary>
+            Gets the symbol's definition.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSymbol.Fields">
+            <summary>
+            Gets the symbol's fields.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSymbol.SourceLineNumbers">
+            <summary>
+            Gets the optional source line number of the symbol.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSymbol.Id">
+            <summary>
+            Gets the optional identifier for the symbol.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.IntermediateSymbol.Item(System.Int32)">
+            <summary>
+            Direct access by index to the symbol's fields.
+            </summary>
+            <param name="index">Index of the field to access.</param>
+            <returns>Symbol's field.</returns>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSymbol.AddTag(System.String)">
+            <summary>
+            Add a custom tag to the symbol.
+            </summary>
+            <param name="add">String tag to add to the symbol.</param>
+            <returns>True if the tag was added; otherwise false if th tag was already present.</returns>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSymbol.HasTag(System.String)">
+            <summary>
+            Tests whether a symbol has a tag.
+            </summary>
+            <param name="has">String tag to find.</param>
+            <returns>True if the symbol has the tag; otherwise false.</returns>
+        </member>
+        <member name="M:WixToolset.Data.IntermediateSymbol.RemoveTag(System.String)">
+            <summary>
+            Removes a tag from the symbol.
+            </summary>
+            <param name="remove">String tag to remove.</param>
+            <returns>True if the tag was removed; otherwise false if the tag was not present.</returns>
+        </member>
+        <member name="T:WixToolset.Data.Localization">
+            <summary>
+            Object that represents a localization file.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.Localization.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Collections.Generic.IDictionary{System.String,WixToolset.Data.Bind.BindVariable},System.Collections.Generic.IDictionary{System.String,WixToolset.Data.LocalizedControl})">
+            <summary>
+            Instantiates a new localization object with default location.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.Localization.#ctor(WixToolset.Data.LocalizationLocation,System.Nullable{System.Int32},System.Nullable{System.Int32},System.String,System.Collections.Generic.IDictionary{System.String,WixToolset.Data.Bind.BindVariable},System.Collections.Generic.IDictionary{System.String,WixToolset.Data.LocalizedControl})">
+            <summary>
+            Instantiates a new localization object.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Localization.Location">
+            <summary>
+            Gets the location the localization came from.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Localization.Codepage">
+            <summary>
+            Gets the codepage.
+            </summary>
+            <value>The codepage.</value>
+        </member>
+        <member name="P:WixToolset.Data.Localization.SummaryInformationCodepage">
+            <summary>
+            Gets the summary information codepage.
+            </summary>
+            <value>The summary information codepage.</value>
+        </member>
+        <member name="P:WixToolset.Data.Localization.Culture">
+            <summary>
+            Gets the culture.
+            </summary>
+            <value>The culture.</value>
+        </member>
+        <member name="P:WixToolset.Data.Localization.Variables">
+            <summary>
+            Gets the variables.
+            </summary>
+            <value>The variables.</value>
+        </member>
+        <member name="P:WixToolset.Data.Localization.LocalizedControls">
+            <summary>
+            Gets the localized controls.
+            </summary>
+            <value>The localized controls.</value>
+        </member>
+        <member name="M:WixToolset.Data.Localization.UpdateLocation(WixToolset.Data.LocalizationLocation)">
+            <summary>
+            Updates the location, if the location is a higher state than the current state.
+            </summary>
+            <param name="location">Location to update to.</param>
+            <returns>This localization object.</returns>
+        </member>
+        <member name="T:WixToolset.Data.LocalizationLocation">
+            <summary>
+            Location where the localization was loaded.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.LocalizationLocation.Source">
+            <summary>
+            Localization loaded from .wxl source file.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.LocalizationLocation.Library">
+            <summary>
+            Localization loaded from .wixlib library.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.LocalizationLocation.Extension">
+            <summary>
+            Localization loaded from .wixlib library within .wixext WixExtension.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.LocalizationLocation.ExtensionDefaultCulture">
+            <summary>
+            Localization placed in .wixext WixExtension as the default culture localization for the
+            WixExtension.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.LocalizedControl.GetKey">
+            <summary>
+            Get key for a localized control.
+            </summary>
+            <returns>The localized control id.</returns>
+        </member>
+        <member name="M:WixToolset.Data.LocalizedControl.GetKey(System.String,System.String)">
+            <summary>
+            Get key for a localized control.
+            </summary>
+            <param name="dialog">The optional id of the control's dialog.</param>
+            <param name="control">The id of the control.</param>
+            <returns>The localized control id.</returns>
+        </member>
+        <member name="T:WixToolset.Data.Message">
+            <summary>
+            Event args for message events.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.Message.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.MessageLevel,System.Int32,System.String,System.Object[])">
+            <summary>
+            Creates a new Message using a format string.
+            </summary>
+            <param name="sourceLineNumbers">Source line numbers for the message.</param>
+            <param name="level">Message level.</param>
+            <param name="id">Id for the message.</param>
+            <param name="format">Format .</param>
+            <param name="messageArgs">Arguments for the format string.</param>
+        </member>
+        <member name="M:WixToolset.Data.Message.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.MessageLevel,System.Int32,System.Resources.ResourceManager,System.String,System.Object[])">
+            <summary>
+            Creates a new Message using a format string from a resource manager.
+            </summary>
+            <param name="sourceLineNumbers">Source line numbers for the message.</param>
+            <param name="level">Message level.</param>
+            <param name="id">Id for the message.</param>
+            <param name="resourceManager">Resource manager.</param>
+            <param name="resourceName">Name of the resource.</param>
+            <param name="messageArgs">Arguments for the format string.</param>
+        </member>
+        <member name="P:WixToolset.Data.Message.SourceLineNumbers">
+            <summary>
+            Gets the source line numbers.
+            </summary>
+            <value>The source line numbers.</value>
+        </member>
+        <member name="P:WixToolset.Data.Message.Id">
+            <summary>
+            Gets the Id for the message.
+            </summary>
+            <value>The Id for the message.</value>
+        </member>
+        <member name="P:WixToolset.Data.Message.ResourceManager">
+            <summary>
+            Gets the resource manager for this event args.
+            </summary>
+            <value>The resource manager for this event args.</value>
+        </member>
+        <member name="P:WixToolset.Data.Message.ResourceNameOrFormat">
+            <summary>
+            Gets the name of the resource or format string if no resource manager was provided.
+            </summary>
+            <value>The name of the resource or format string.</value>
+        </member>
+        <member name="P:WixToolset.Data.Message.Level">
+            <summary>
+            Gets or sets the <see cref="T:WixToolset.Data.MessageLevel"/> for the message.
+            </summary>
+            <value>The <see cref="T:WixToolset.Data.MessageLevel"/> for the message.</value>
+        </member>
+        <member name="P:WixToolset.Data.Message.MessageArgs">
+            <summary>
+            Gets the arguments for the format string.
+            </summary>
+            <value>The arguments for the format string.</value>
+        </member>
+        <member name="M:WixToolset.Data.Message.ElevateToError">
+            <summary>
+            Changes the message into an error message.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.MessageLevel">
+            <summary>
+            Enum for message to display.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.MessageLevel.Nothing">
+            <summary>Display nothing.</summary>
+        </member>
+        <member name="F:WixToolset.Data.MessageLevel.Verbose">
+            <summary>Display verbose information.</summary>
+        </member>
+        <member name="F:WixToolset.Data.MessageLevel.Information">
+            <summary>Display information.</summary>
+        </member>
+        <member name="F:WixToolset.Data.MessageLevel.Warning">
+            <summary>Display warning.</summary>
+        </member>
+        <member name="F:WixToolset.Data.MessageLevel.Error">
+            <summary>Display error.</summary>
+        </member>
+        <member name="T:WixToolset.Data.OutputType">
+            <summary>
+            Various types of output.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Unknown">
+            <summary>Unknown output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Bundle">
+            <summary>Bundle output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Library">
+            <summary>Library output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Module">
+            <summary>Module output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Patch">
+            <summary>Patch output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.PatchCreation">
+            <summary>Patch Creation output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Package">
+            <summary>Package output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.Transform">
+            <summary>Transform output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.OutputType.IntermediatePostLink">
+            <summary>Intermediate representation post-link output type.</summary>
+        </member>
+        <member name="T:WixToolset.Data.PdbType">
+            <summary>
+            Platforms supported by compiler.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.PdbType.Full">
+            <summary>A .wixpdb file matching the generated output (default).</summary>
+        </member>
+        <member name="F:WixToolset.Data.PdbType.None">
+            <summary>No .wixpdb file.</summary>
+        </member>
+        <member name="T:WixToolset.Data.Platform">
+            <summary>
+            Platforms supported by compiler.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Platform.X86">
+            <summary>x86.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Platform.X64">
+            <summary>x64.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Platform.ARM64">
+            <summary>arm64.</summary>
+        </member>
+        <member name="T:WixToolset.Data.SectionType">
+            <summary>
+            Type of section.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Unknown">
+            <summary>Unknown section type, default and invalid.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Bundle">
+            <summary>Bundle section type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Fragment">
+            <summary>Fragment section type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Module">
+            <summary>Module section type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Package">
+            <summary>Package section type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Product">
+            <summary>Package output type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.PatchCreation">
+            <summary>Patch creation section type.</summary>
+        </member>
+        <member name="F:WixToolset.Data.SectionType.Patch">
+            <summary>Patch section type.</summary>
+        </member>
+        <member name="T:WixToolset.Data.SourceLineNumber">
+            <summary>
+            Represents file name and line number for source file
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.#ctor(System.String)">
+            <summary>
+            Constructor for a source with no line information.
+            </summary>
+            <param name="fileName">File name of the source.</param>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.#ctor(System.String,System.Int32)">
+            <summary>
+            Constructor for a source with line information.
+            </summary>
+            <param name="fileName">File name of the source.</param>
+            <param name="lineNumber">Line number of the source.</param>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.#ctor(System.String,WixToolset.Data.SourceLineNumber)">
+            <summary>
+            Constructor for a source with a parent and no line information.
+            </summary>
+            <param name="fileName">File name of the source.</param>
+            <param name="parent">Parent of this source line number</param>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.#ctor(System.String,WixToolset.Data.SourceLineNumber,System.Int32)">
+            <summary>
+            Constructor for a source with a parent and line information.
+            </summary>
+            <param name="fileName">File name of the source.</param>
+            <param name="parent">Parent of this source line number</param>
+            <param name="lineNumber">Line number of the source.</param>
+        </member>
+        <member name="P:WixToolset.Data.SourceLineNumber.FileName">
+            <summary>
+            Gets the file name of the source.
+            </summary>
+            <value>File name for the source.</value>
+        </member>
+        <member name="P:WixToolset.Data.SourceLineNumber.LineNumber">
+            <summary>
+            Gets or sets the line number of the source.
+            </summary>
+            <value>Line number of the source.</value>
+        </member>
+        <member name="P:WixToolset.Data.SourceLineNumber.Parent">
+            <summary>
+            Gets or sets the parent source line number that included this source line number.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.SourceLineNumber.QualifiedFileName">
+            <summary>
+            Gets the file name and line information.
+            </summary>
+            <value>File name and line information.</value>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.CreateFromEncoded(System.String)">
+            <summary>
+            Creates a source line number from an encoded string.
+            </summary>
+            <param name="encodedSourceLineNumbers">Encoded string to parse.</param>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.CreateFromUri(System.String)">
+            <summary>
+            Creates a source line number from a URI.
+            </summary>
+            <param name="uri">Uri to convert into source line number</param>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.CreateFromXObject(System.Xml.Linq.XObject,System.Int32)">
+            <summary>
+            Creates a source line number from an XObject.
+            </summary>
+            <param name="node">XML node to create source line number from.</param>
+            <param name="offset">Optional line number offset into XML file not already included in the line information.</param>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.GetFromXAnnotation(System.Xml.Linq.XObject)">
+            <summary>
+            Get the source line information for the current element. Typically this information 
+            is set by the precompiler for each element that it encounters.
+            </summary>
+            <param name="node">Element to get source line information for.</param>
+            <returns>
+            The source line number used to author the element being processed or
+            null if the preprocessor did not process the element or the node is
+            not an element.
+            </returns>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.GetEncoded">
+            <summary>
+            Returns the SourceLineNumber and parents encoded as a string.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.Equals(System.Object)">
+            <summary>
+            Determines if two SourceLineNumbers are equivalent.
+            </summary>
+            <param name="obj">Object to compare.</param>
+            <returns>True if SourceLineNumbers are equivalent.</returns>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.GetHashCode">
+            <summary>
+            Serves as a hash code for a particular type.
+            </summary>
+            <returns>The hash code.</returns>
+        </member>
+        <member name="M:WixToolset.Data.SourceLineNumber.ToString">
+            <summary>
+            Shows a string representation of a source line number.
+            </summary>
+            <returns>String representation of a source line number.</returns>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.AssemblyType.NotAnAssembly">
+            <summary>File is not an assembly.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.AssemblyType.DotNetAssembly">
+            <summary>File is a Common Language Runtime Assembly.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.AssemblyType.Win32Assembly">
+            <summary>File is Win32 SxS assembly.</summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.PatchAttributeType">
+            <summary>
+            PatchAttribute values
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchAttributeType.Ignore">
+            <summary>Prevents the updating of the file that is in fact changed in the upgraded image relative to the target images.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchAttributeType.IncludeWholeFile">
+            <summary>Set if the entire file should be installed rather than creating a binary patch.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchAttributeType.AllowIgnoreOnError">
+            <summary>Set to indicate that the patch is non-vital.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchAttributeType.Defined">
+            <summary>Allowed bits.</summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.LockPermissionConstants">
+             <summary>
+            -------------------------------------------------------------------------------------------------
+             Layout of an Access Mask (from https://learn.microsoft.com/en-us/previous-versions/windows/it-pro/windows-server-2003/cc783530(v=ws.10))
+            
+              -------------------------------------------------------------------------------------------------
+              |31|30|29|28|27|26|25|24|23|22|21|20|19|18|17|16|15|14|13|12|11|10|09|08|07|06|05|04|03|02|01|00|
+              -------------------------------------------------------------------------------------------------
+              |GR|GW|GE|GA| Reserved  |AS|StandardAccessRights|        Object-Specific Access Rights          |
+            
+              Key
+              GR = Generic Read
+              GW = Generic Write
+              GE = Generic Execute
+              GA = Generic All
+              AS = Right to access SACL
+             </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.LockPermissionConstants.GenericPermissions">
+            <summary>
+            Generic Access Rights (per WinNT.h)
+            ---------------------
+            GENERIC_ALL                      (0x10000000L)
+            GENERIC_EXECUTE                  (0x20000000L)
+            GENERIC_WRITE                    (0x40000000L)
+            GENERIC_READ                     (0x80000000L)
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.LockPermissionConstants.StandardPermissions">
+            <summary>
+            Standard Access Rights (per WinNT.h)
+            ----------------------
+            DELETE                           (0x00010000L)
+            READ_CONTROL                     (0x00020000L)
+            WRITE_DAC                        (0x00040000L)
+            WRITE_OWNER                      (0x00080000L)
+            SYNCHRONIZE                      (0x00100000L)
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.LockPermissionConstants.FolderPermissions">
+            <summary>
+            Object-Specific Access Rights
+            =============================
+            Directory Access Rights (per WinNT.h)
+            -----------------------
+            FILE_LIST_DIRECTORY       ( 0x0001 )
+            FILE_ADD_FILE             ( 0x0002 )
+            FILE_ADD_SUBDIRECTORY     ( 0x0004 )
+            FILE_READ_EA              ( 0x0008 )
+            FILE_WRITE_EA             ( 0x0010 )
+            FILE_TRAVERSE             ( 0x0020 )
+            FILE_DELETE_CHILD         ( 0x0040 )
+            FILE_READ_ATTRIBUTES      ( 0x0080 )
+            FILE_WRITE_ATTRIBUTES     ( 0x0100 )
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.LockPermissionConstants.RegistryPermissions">
+            <summary>
+            Registry Access Rights
+            ----------------------
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.LockPermissionConstants.FilePermissions">
+             <summary>
+             File Access Rights (per WinNT.h)
+             ------------------
+             FILE_READ_DATA            ( 0x0001 )
+             FILE_WRITE_DATA           ( 0x0002 )
+             FILE_APPEND_DATA          ( 0x0004 )
+             FILE_READ_EA              ( 0x0008 )
+             FILE_WRITE_EA             ( 0x0010 )
+             FILE_EXECUTE              ( 0x0020 )
+             via mask FILE_ALL_ACCESS  ( 0x0040 )
+             FILE_READ_ATTRIBUTES      ( 0x0080 )
+             FILE_WRITE_ATTRIBUTES     ( 0x0100 )
+            
+             STANDARD_RIGHTS_REQUIRED  (0x000F0000L)
+             FILE_ALL_ACCESS           (STANDARD_RIGHTS_REQUIRED | SYNCHRONIZE | 0x1FF)
+             </summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.OptimizeCAFlags">
+            <summary>
+            Values for the OptimizeCA MsiPatchMetdata property, which indicates whether custom actions can be skipped when applying the patch.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.OptimizeCAFlags.None">
+            <summary>
+            No custom actions are skipped.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.OptimizeCAFlags.SkipAssignment">
+            <summary>
+            Skip property (type 51) and directory (type 35) assignment custom actions.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.OptimizeCAFlags.SkipImmediate">
+            <summary>
+            Skip immediate custom actions that are not property or directory assignment custom actions.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.OptimizeCAFlags.SkipDeferred">
+            <summary>
+            Skip custom actions that run within the script.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.RegistryRootType">
+            <summary>
+            Registry root mapping.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.RegistryRootType.MachineUser">
+            <summary>HKLM in a per-machine and HKCU in per-user.</summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.PatchInstallerRequirement">
+            <summary>
+            Summary information values for the PachInstallerRequirement property.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchInstallerRequirement.Version10">
+            <summary>Any version of the installer will do</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchInstallerRequirement.Version12">
+            <summary>At least 1.2</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchInstallerRequirement.Version20">
+            <summary>At least 2.0</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchInstallerRequirement.Version30">
+            <summary>At least 3.0</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchInstallerRequirement.Version31">
+            <summary>At least 3.1</summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.TransformFlags">
+            <summary>
+            Summary information values for the CharCount property in transforms.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ErrorAddExistingRow">
+            <summary>Ignore error when adding a row that exists.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ErrorDeleteMissingRow">
+            <summary>Ignore error when deleting a row that does not exist.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ErrorAddExistingTable">
+            <summary>Ignore error when adding a table that exists. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ErrorDeleteMissingTable">
+            <summary>Ignore error when deleting a table that does not exist. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ErrorUpdateMissingRow">
+            <summary>Ignore error when updating a row that does not exist. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ErrorChangeCodePage">
+            <summary>Ignore error when transform and database code pages do not match, and their code pages are neutral.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateLanguage">
+            <summary>Default language must match base database. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateProduct">
+            <summary>Product must match base database.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateMajorVersion">
+            <summary>Check major version only. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateMinorVersion">
+            <summary>Check major and minor versions only. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateUpdateVersion">
+            <summary>Check major, minor, and update versions.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateNewLessBaseVersion">
+            <summary>Installed version lt base version. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateNewLessEqualBaseVersion">
+            <summary>Installed version lte base version. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateNewEqualBaseVersion">
+            <summary>Installed version eq base version. </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateNewGreaterEqualBaseVersion">
+            <summary>Installed version gte base version.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateNewGreaterBaseVersion">
+            <summary>Installed version gt base version.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ValidateUpgradeCode">
+            <summary>UpgradeCode must match base database.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ProductVersionMask">
+            <summary>Masks all version checks on ProductVersion.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.ProductVersionOperatorMask">
+            <summary>Masks all operations on ProductVersion.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.InstanceTransformDefault">
+            <summary>Default value for instance transforms.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.LanguageTransformDefault">
+            <summary>Default value for language transforms.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.TransformFlags.PatchTransformDefault">
+            <summary>Default value for patch transforms.</summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixUpgradeConstants.UpgradeDetectedProperty">
+            <summary>
+            Standard property for detecting upgrades.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixUpgradeConstants.UpgradePreventedCondition">
+            <summary>
+            Standard condition to prevent upgrades.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixUpgradeConstants.DowngradeDetectedProperty">
+            <summary>
+            Standard property for downgrade detected.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixUpgradeConstants.DowngradePreventedCondition">
+            <summary>
+            Standard condition to prevent downgrades.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.ContainerType">
+            <summary>
+            Types of bundle packages.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.WixBundleExePackageDetectionType">
+            <summary>
+            How Burn will detect the ExePackage.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.WixBundlePackageType">
+            <summary>
+            Types of bundle packages.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixBundlePatchTargetCodeType.Unspecified">
+            <summary>
+            The transform has no specific target.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixBundlePatchTargetCodeType.ProductCode">
+            <summary>
+            The transform targets a specific ProductCode.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixBundlePatchTargetCodeType.UpgradeCode">
+            <summary>
+            The transform targets a specific UpgradeCode.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.SymbolPathType">
+            <summary>
+            The types that the WixDeltaPatchSymbolPaths table can hold.
+            </summary>
+            <remarks>The order of these values is important since WixDeltaPatchSymbolPaths are sorted by this type.</remarks>
+        </member>
+        <member name="T:WixToolset.Data.Symbols.PatchSymbolFlags">
+            <summary>
+            The following flags are used with PATCH_OPTION_DATA SymbolOptionFlags:
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchSymbolFlags.PatchSymbolNoImagehlp">
+            <summary>
+            Don't use imagehlp.dll
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchSymbolFlags.PatchSymbolNoFailures">
+            <summary>
+            Don't fail patch due to imagehlp failures.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchSymbolFlags.PatchSymbolUndecoratedToo">
+            <summary>
+            After matching decorated symbols, try to match remaining by undecorated names.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.PatchSymbolFlags.PatchSymbolReserved">
+            <summary>
+            (used internally)
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.Symbols.WixProductSearchAttributes.UpgradeCode">
+            <summary>
+            Guid contains the UpgradeCode. If not set, it contains the ProductCode.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.Symbols.WixSimpleReferenceSymbol.SymbolicName">
+            <summary>
+            Gets the symbolic name.
+            </summary>
+            <value>Symbolic name.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.ColumnCategory">
+            <summary>
+            Column validation category type
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Unknown">
+            <summary>Unknown category, default and invalid.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Text">
+            <summary>Text category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.UpperCase">
+            <summary>UpperCase category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.LowerCase">
+            <summary>LowerCase category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Integer">
+            <summary>Integer category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.DoubleInteger">
+            <summary>DoubleInteger category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.TimeDate">
+            <summary>TimeDate category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Identifier">
+            <summary>Identifier category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Property">
+            <summary>Property category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Filename">
+            <summary>Filename category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.WildCardFilename">
+            <summary>WildCardFilename category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Path">
+            <summary>Path category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Paths">
+            <summary>Paths category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.AnyPath">
+            <summary>AnyPath category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.DefaultDir">
+            <summary>DefaultDir category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.RegPath">
+            <summary>RegPath category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Formatted">
+            <summary>Formatted category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Template">
+            <summary>Template category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Condition">
+            <summary>Condition category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Guid">
+            <summary>Guid category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Version">
+            <summary>Version category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Language">
+            <summary>Language category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Binary">
+            <summary>Binary category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.CustomSource">
+            <summary>CustomSource category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Cabinet">
+            <summary>Cabinet category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.Shortcut">
+            <summary>Shortcut category.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnCategory.FormattedSDDLText">
+            <summary>Formatted SDDL category.</summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.ColumnDefinition">
+            <summary>
+            Definition of a table's column.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ColumnDefinition.#ctor(System.String,WixToolset.Data.WindowsInstaller.ColumnType,System.Int32,System.Boolean,System.Boolean,WixToolset.Data.WindowsInstaller.ColumnCategory,System.Nullable{System.Int64},System.Nullable{System.Int64},System.String,System.Nullable{System.Int32},System.String,System.String,System.Nullable{WixToolset.Data.WindowsInstaller.ColumnModularizeType},System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Creates a new column definition.
+            </summary>
+            <param name="name">Name of column.</param>
+            <param name="type">Type of column</param>
+            <param name="length">Length of column.</param>
+            <param name="primaryKey">If column is primary key.</param>
+            <param name="nullable">If column is nullable.</param>
+            <param name="category">Validation category for column.</param>
+            <param name="minValue">Optional minimum value for the column.</param>
+            <param name="maxValue">Optional maximum value for the colum.</param>
+            <param name="keyTable">Optional name of table for foreign key.</param>
+            <param name="keyColumn">Optional name of column for foreign key.</param>
+            <param name="possibilities">Set of possible values for column.</param>
+            <param name="description">Description of column in vaidation table.</param>
+            <param name="modularizeType">Type of modularization for column</param>
+            <param name="forceLocalizable">If the column is localizable.</param>
+            <param name="useCData">If whitespace should be preserved in a CDATA node.</param>
+            <param name="unreal">If not saved to MSI.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Added">
+            <summary>
+            Gets whether this column was added via a transform.
+            </summary>
+            <value>Whether this column was added via a transform.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Name">
+            <summary>
+            Gets the name of the column.
+            </summary>
+            <value>Name of column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Type">
+            <summary>
+            Gets the type of the column.
+            </summary>
+            <value>Type of column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Length">
+            <summary>
+            Gets the length of the column.
+            </summary>
+            <value>Length of column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.PrimaryKey">
+            <summary>
+            Gets if the column is a primary key.
+            </summary>
+            <value>true if column is primary key.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Nullable">
+            <summary>
+            Gets if the column is nullable.
+            </summary>
+            <value>true if column is nullable.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.ModularizeType">
+            <summary>
+            Gets the type of modularization for this column.
+            </summary>
+            <value>Column's modularization type.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.IsLocalizable">
+            <summary>
+            Gets if the column is localizable. Can be because the type is localizable, or because the column 
+            was explicitly set to be so.
+            </summary>
+            <value>true if column is localizable.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.MinValue">
+            <summary>
+            Gets the minimum value for the column.
+            </summary>
+            <value>Minimum value for the column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.MaxValue">
+            <summary>
+            Gets the maximum value for the column.
+            </summary>
+            <value>Maximum value for the column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.KeyTable">
+            <summary>
+            Gets the table that has the foreign key for this column
+            </summary>
+            <value>Foreign key table name.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.KeyColumn">
+            <summary>
+            Gets the foreign key column that this column refers to.
+            </summary>
+            <value>Foreign key column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Category">
+            <summary>
+            Gets the validation category for this column.
+            </summary>
+            <value>Validation category.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Possibilities">
+            <summary>
+            Gets the set of possibilities for this column.
+            </summary>
+            <value>Set of possibilities for this column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Description">
+            <summary>
+            Gets the description for this column.
+            </summary>
+            <value>Description of column.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.UseCData">
+            <summary>
+            Gets if whitespace should be preserved in a CDATA node.
+            </summary>
+            <value>true if whitespace should be preserved in a CDATA node.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ColumnDefinition.Unreal">
+            <summary>
+            Gets if column is Unreal.
+            </summary>
+            <value>true if column should not be included in idts.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ColumnDefinition.Read(System.Xml.XmlReader)">
+            <summary>
+            Parses a column definition in a table definition.
+            </summary>
+            <param name="reader">Reader to get data from.</param>
+            <returns>The ColumnDefintion represented by the Xml.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ColumnDefinition.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a ColumnDefinition in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Output should persist itself as XML.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ColumnDefinition.CompareTo(WixToolset.Data.WindowsInstaller.ColumnDefinition)">
+            <summary>
+            Compare this column definition to another column definition.
+            </summary>
+            <remarks>
+            Only Windows Installer traits are compared, allowing for updates to WiX-specific table definitions.
+            </remarks>
+            <param name="other">The <see cref="T:WixToolset.Data.WindowsInstaller.ColumnDefinition"/> to compare with this one.</param>
+            <returns>0 if the columns' core propeties are the same; otherwise, non-0.</returns>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.ColumnModularizeType">
+            <summary>
+            Specifies if the column should be modularized.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.None">
+            <summary>Column should not be modularized.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.Column">
+            <summary>Column should be modularized.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.Icon">
+            <summary>When the column is an primary or foreign key to the Icon table it should be modularized special.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.CompanionFile">
+            <summary>When the column is a companion file it should be modularized.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.Condition">
+            <summary>Column is a condition and should be modularized.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.ControlEventArgument">
+            <summary>Special modularization type for the ControlEvent table's Argument column.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.ControlText">
+            <summary>Special modularization type for the Control table's Text column.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.Property">
+            <summary>Any Properties in the column should be modularized.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnModularizeType.SemicolonDelimited">
+            <summary>Semi-colon list of keys, all of which need to be modularized.</summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.ColumnType">
+            <summary>
+            Defines MSI column types.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnType.Unknown">
+            <summary>Unknown column type, default and invalid.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnType.String">
+            <summary>Column is a string.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnType.Localized">
+            <summary>Column is a localizable string.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnType.Number">
+            <summary>Column is a number.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnType.Object">
+            <summary>Column is a binary stream.</summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.ColumnType.Preserved">
+            <summary>Column is a string that is preserved in transforms (like Object).</summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Field">
+            <summary>
+            Field containing data for a column in a row.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.#ctor(WixToolset.Data.WindowsInstaller.ColumnDefinition)">
+            <summary>
+            Instantiates a new Field.
+            </summary>
+            <param name="columnDefinition">Column definition for this field.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Field.Column">
+            <summary>
+            Gets or sets the column definition for this field.
+            </summary>
+            <value>Column definition.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Field.Data">
+            <summary>
+            Gets or sets the data for this field.
+            </summary>
+            <value>Data in the field.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Field.Modified">
+            <summary>
+            Gets or sets whether this field is modified.
+            </summary>
+            <value>Whether this field is modified.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Field.PreviousData">
+            <summary>
+            Gets or sets the previous data.
+            </summary>
+            <value>The previous data.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.Create(WixToolset.Data.WindowsInstaller.ColumnDefinition)">
+            <summary>
+            Instantiate a new Field object of the correct type.
+            </summary>
+            <param name="columnDefinition">The column definition for the field.</param>
+            <returns>The new Field object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.BestEffortSet(System.Object)">
+            <summary>
+            Sets the value of a particular field in the row without validating.
+            </summary>
+            <param name="value">Value of a field in the row.</param>
+            <returns>True if successful, false if validation failed.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.IsIdentical(WixToolset.Data.WindowsInstaller.Field)">
+            <summary>
+            Determine if this field is identical to another field.
+            </summary>
+            <param name="field">The other field to compare to.</param>
+            <returns>true if they are equal; false otherwise.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.ToString">
+            <summary>
+            Overrides the built in object implementation to return the field's data as a string.
+            </summary>
+            <returns>Field's data as a string.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.AsInteger">
+            <summary>
+            Gets the field as an integer.
+            </summary>
+            <returns>Field's data as an integer.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.AsNullableInteger">
+            <summary>
+            Gets the field as an integer that could be null.
+            </summary>
+            <returns>Field's data as an integer that could be null.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.AsString">
+            <summary>
+            Gets the field as a string.
+            </summary>
+            <returns>Field's data as a string.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.ValidateValue(WixToolset.Data.WindowsInstaller.ColumnDefinition,System.Object)">
+            <summary>
+            Validate a value for a column.
+            </summary>
+            <param name="column">The column.</param>
+            <param name="value">The value to validate.</param>
+            <returns>Validated value.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.Read(System.Xml.XmlReader)">
+            <summary>
+            Parse a field from the xml.
+            </summary>
+            <param name="reader">XmlReader where the intermediate is persisted.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Field.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a field in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Field should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.ObjectField">
+            <summary>
+            Field containing data for an object column in a row.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ObjectField.#ctor(WixToolset.Data.WindowsInstaller.ColumnDefinition)">
+            <summary>
+            Instantiates a new Field.
+            </summary>
+            <param name="columnDefinition">Column definition for this field.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ObjectField.EmbeddedFileIndex">
+            <summary>
+            Gets or sets the index of the embedded file in a library.
+            </summary>
+            <value>The index of the embedded file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ObjectField.PreviousEmbeddedFileIndex">
+            <summary>
+            Gets or sets the previous index of the embedded file in the library.
+            </summary>
+            <value>The previous index of the embedded file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ObjectField.PreviousBaseUri">
+            <summary>
+            Gets or sets the path to the embedded cabinet of the previous file.
+            </summary>
+            <value>The path of the cabinet containing the previous file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ObjectField.BaseUri">
+            <summary>
+            Gets the base URI of the object field.
+            </summary>
+            <value>The base URI of the object field.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ObjectField.UnresolvedData">
+            <summary>
+            Gets or sets the unresolved data for this field.
+            </summary>
+            <value>Unresolved Data in the field.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.ObjectField.UnresolvedPreviousData">
+            <summary>
+            Gets or sets the unresolved previous data.
+            </summary>
+            <value>The unresolved previous data.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ObjectField.Read(System.Xml.XmlReader)">
+            <summary>
+            Parse a field from the xml.
+            </summary>
+            <param name="reader">XmlReader where the intermediate is persisted.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.ObjectField.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a field in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Field should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Row">
+            <summary>
+            Row containing data for a table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this row belongs to and should get its column definitions from.</param>
+            <remarks>The compiler should use this constructor exclusively.</remarks>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Creates a row that does not belong to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="tableDefinition">TableDefinition this row should get its column definitions from.</param>
+            <remarks>This constructor is used in cases where there isn't a clear owner of the row.  The linker uses this constructor for the rows it generates.</remarks>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.Operation">
+            <summary>
+            Gets or sets the row transform operation.
+            </summary>
+            <value>The row transform operation.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.SourceLineNumbers">
+            <summary>
+            Gets the source file and line number for the row.
+            </summary>
+            <value>Source file and line number.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.Table">
+            <summary>
+            Gets the table this row belongs to.
+            </summary>
+            <value>null if Row does not belong to a Table, or owner Table otherwise.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.TableDefinition">
+            <summary>
+            Gets the table definition for this row.
+            </summary>
+            <remarks>A Row always has a TableDefinition, even if the Row does not belong to a Table.</remarks>
+            <value>TableDefinition for Row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.Fields">
+            <summary>
+            Gets the fields contained by this row.
+            </summary>
+            <value>Array of field objects</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.Number">
+            <summary>
+            Gets the unique number for the row.
+            </summary>
+            <value>Number for row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Row.Item(System.Int32)">
+            <summary>
+            Gets or sets the value of a particular field in the row.
+            </summary>
+            <param name="field">field index.</param>
+            <value>Value of a field in the row.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.FieldAsInteger(System.Int32)">
+            <summary>
+            Gets the field as an integer.
+            </summary>
+            <returns>Field's data as an integer.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.FieldAsNullableInteger(System.Int32)">
+            <summary>
+            Gets the field as an integer that could be null.
+            </summary>
+            <returns>Field's data as an integer that could be null.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.FieldAsString(System.Int32)">
+            <summary>
+            Gets the field as a string.
+            </summary>
+            <returns>Field's data as a string.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.BestEffortSetField(System.Int32,System.Object)">
+            <summary>
+            Sets the value of a particular field in the row without validating.
+            </summary>
+            <param name="field">field index.</param>
+            <param name="value">Value of a field in the row.</param>
+            <returns>True if successful, false if validation failed.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.GetKey">
+            <summary>
+            Get the value used to represent the row in a keyed row collection.
+            </summary>
+            <returns>Primary key or row number if no primary key is available.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.GetPrimaryKey(System.Char)">
+            <summary>
+            Get the primary key of this row.
+            </summary>
+            <param name="delimiter">Delimiter character for multiple column primary keys.</param>
+            <returns>The primary key or null if the row's table has no primary key columns.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.GetPrimaryKey(System.Char,System.String)">
+            <summary>
+            Get the primary key of this row.
+            </summary>
+            <param name="delimiter">Delimiter character for multiple column primary keys.</param>
+            <param name="nullReplacement">String to represent null values in the primary key.</param>
+            <returns>The primary key or null if the row's table has no primary key columns.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.IsColumnNull(System.Int32)">
+            <summary>
+            Returns true if the specified field is null.
+            </summary>
+            <param name="field">Index of the field to check.</param>
+            <returns>true if the specified field is null, false otherwise.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.IsColumnEmpty(System.Int32)">
+            <summary>
+            Returns true if the specified field is null or an empty string.
+            </summary>
+            <param name="field">Index of the field to check.</param>
+            <returns>true if the specified field is null or an empty string, false otherwise.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.IsIdentical(WixToolset.Data.WindowsInstaller.Row)">
+            <summary>
+            Tests if the passed in row is identical.
+            </summary>
+            <param name="row">Row to compare against.</param>
+            <returns>True if two rows are identical.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.CopyTo(WixToolset.Data.WindowsInstaller.Row)">
+            <summary>
+            Copies this row to the target row.
+            </summary>
+            <param name="target">Row to copy data to.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.ToString">
+            <summary>
+            Returns a string representation of the Row.
+            </summary>
+            <returns>A string representation of the Row.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.Read(System.Xml.XmlReader,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a Row from the XmlReader.
+            </summary>
+            <param name="reader">Reader to get data from.</param>
+            <param name="table">Table for this row.</param>
+            <returns>New row object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Row.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a row in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Row should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.RowOperation">
+            <summary>
+            The row transform operations.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.RowOperation.None">
+            <summary>
+            No operation.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.RowOperation.Add">
+            <summary>
+            Added row.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.RowOperation.Delete">
+            <summary>
+            Deleted row.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.RowOperation.Modify">
+            <summary>
+            Modified row.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.BBControlRow">
+            <summary>
+            Specialization of a row for the Control table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a Control row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this Control row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Billboard">
+            <summary>
+            Gets or sets the dialog of the Control row.
+            </summary>
+            <value>Primary key of the Control row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.BBControl">
+            <summary>
+            Gets or sets the identifier for this Control row.
+            </summary>
+            <value>Identifier for this Control row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Type">
+            <summary>
+            Gets or sets the type of the BBControl.
+            </summary>
+            <value>Name of the BBControl.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.X">
+            <summary>
+            Gets or sets the X location of the BBControl.
+            </summary>
+            <value>X location of the BBControl.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Y">
+            <summary>
+            Gets or sets the Y location of the BBControl.
+            </summary>
+            <value>Y location of the BBControl.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Width">
+            <summary>
+            Gets or sets the width of the BBControl.
+            </summary>
+            <value>Width of the BBControl.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Height">
+            <summary>
+            Gets or sets the height of the BBControl.
+            </summary>
+            <value>Height of the BBControl.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Attributes">
+            <summary>
+            Gets or sets the attributes for the BBControl.
+            </summary>
+            <value>Attributes for the BBControl.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.BBControlRow.Text">
+            <summary>
+            Gets or sets the text of the BBControl.
+            </summary>
+            <value>Text of the BBControl.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.ComponentRow">
+            <summary>
+            Specialization of a row for the Component table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a Control row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this Component row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.Component">
+            <summary>
+            Gets or sets the identifier for this Component row.
+            </summary>
+            <value>Identifier for this Component row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.Guid">
+            <summary>
+            Gets or sets the ComponentId for this Component row.
+            </summary>
+            <value>guid for this Component row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.Directory">
+            <summary>
+            Gets or sets the Directory_ of the Component.
+            </summary>
+            <value>Directory of the Component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsLocalOnly">
+            <summary>
+            Gets or sets the local only attribute of the Component.
+            </summary>
+            <value>Local only attribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsSourceOnly">
+            <summary>
+            Gets or sets the source only attribute of the Component.
+            </summary>
+            <value>Source only attribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsOptional">
+            <summary>
+            Gets or sets the optional attribute of the Component.
+            </summary>
+            <value>Optional attribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsRegistryKeyPath">
+            <summary>
+            Gets or sets the registry key path attribute of the Component.
+            </summary>
+            <value>Registry key path attribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsSharedDll">
+            <summary>
+            Gets or sets the shared dll ref count attribute of the Component.
+            </summary>
+            <value>Shared dll ref countattribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsPermanent">
+            <summary>
+            Gets or sets the permanent attribute of the Component.
+            </summary>
+            <value>Permanent attribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.IsOdbcDataSourceKeyPath">
+            <summary>
+            Gets or sets the ODBC data source key path attribute of the Component.
+            </summary>
+            <value>ODBC data source key path attribute of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.Is64Bit">
+            <summary>
+            Gets or sets the 64 bit attribute of the Component.
+            </summary>
+            <value>64-bitness of the component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.Condition">
+            <summary>
+            Gets or sets the condition of the Component.
+            </summary>
+            <value>Condition of the Component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.KeyPath">
+            <summary>
+            Gets or sets the key path of the Component.
+            </summary>
+            <value>Key path of the Component.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ComponentRow.SourceFile">
+            <summary>
+            Gets or sets the source location to the file to fill in the Text of the control.
+            </summary>
+            <value>Source location to the file to fill in the Text of the control.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.ControlRow">
+            <summary>
+            Specialization of a row for the Control table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.ControlRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a Control row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this Control row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Dialog">
+            <summary>
+            Gets or sets the dialog of the Control row.
+            </summary>
+            <value>Primary key of the Control row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Control">
+            <summary>
+            Gets or sets the identifier for this Control row.
+            </summary>
+            <value>Identifier for this Control row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Type">
+            <summary>
+            Gets or sets the type of the control.
+            </summary>
+            <value>Name of the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.X">
+            <summary>
+            Gets or sets the X location of the control.
+            </summary>
+            <value>X location of the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Y">
+            <summary>
+            Gets or sets the Y location of the control.
+            </summary>
+            <value>Y location of the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Width">
+            <summary>
+            Gets or sets the width of the control.
+            </summary>
+            <value>Width of the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Height">
+            <summary>
+            Gets or sets the height of the control.
+            </summary>
+            <value>Height of the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Attributes">
+            <summary>
+            Gets or sets the attributes for the control.
+            </summary>
+            <value>Attributes for the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Property">
+            <summary>
+            Gets or sets the Property associated with the control.
+            </summary>
+            <value>Property associated with the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Text">
+            <summary>
+            Gets or sets the text of the control.
+            </summary>
+            <value>Text of the control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Next">
+            <summary>
+            Gets or sets the next control.
+            </summary>
+            <value>Next control.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.ControlRow.Help">
+            <summary>
+            Gets or sets the help for the control.
+            </summary>
+            <value>Help for the control.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.FileRow">
+            <summary>
+            Specialization of a row for the file table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.FileRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a File row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this File row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.FileRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Creates a File row that does not belong to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="tableDefinition">TableDefinition this Media row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.File">
+            <summary>
+            Gets or sets the primary key of the file row.
+            </summary>
+            <value>Primary key of the file row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Component">
+            <summary>
+            Gets or sets the component this file row belongs to.
+            </summary>
+            <value>Component this file row belongs to.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.FileName">
+            <summary>
+            Gets or sets the name of the file.
+            </summary>
+            <value>Name of the file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.LongFileName">
+            <summary>
+            Gets or sets the real filesystem name of the file (without a pipe). This is typically the long name of the file.
+            However, if no long name is available, falls back to the short name.
+            </summary>
+            <value>Long Name of the file - or if no long name is available, falls back to the short name.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.FileSize">
+            <summary>
+            Gets or sets the size of the file.
+            </summary>
+            <value>Size of the file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Version">
+            <summary>
+            Gets or sets the version of the file.
+            </summary>
+            <value>Version of the file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Language">
+            <summary>
+            Gets or sets the LCID of the file.
+            </summary>
+            <value>LCID of the file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Attributes">
+            <summary>
+            Gets or sets the attributes on a file.
+            </summary>
+            <value>Attributes on a file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Compressed">
+            <summary>
+            Gets or sets whether this file should be compressed.
+            </summary>
+            <value>Whether this file should be compressed.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Sequence">
+            <summary>
+            Gets or sets the sequence of the file row.
+            </summary>
+            <value>Sequence of the file row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.DiskId">
+            <summary>
+            Gets or sets the disk id for this file.
+            </summary>
+            <value>Disk id for the file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.Source">
+            <summary>
+            Gets or sets the source location to the file.
+            </summary>
+            <value>Source location to the file.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.FileRow.PreviousSource">
+            <summary>
+            Gets or sets the source location to the previous file.
+            </summary>
+            <value>Source location to the previous file.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.MediaRow">
+            <summary>
+            Specialization of a row for the Media table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.MediaRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a Media row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this Media row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.MediaRow.DiskId">
+            <summary>
+            Gets or sets the disk id for this media row.
+            </summary>
+            <value>Disk id.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.MediaRow.LastSequence">
+            <summary>
+            Gets or sets the last sequence number for this media row.
+            </summary>
+            <value>Last sequence number.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.MediaRow.DiskPrompt">
+            <summary>
+            Gets or sets the disk prompt for this media row.
+            </summary>
+            <value>Disk prompt.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.MediaRow.Cabinet">
+            <summary>
+            Gets or sets the cabinet name for this media row.
+            </summary>
+            <value>Cabinet name.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.MediaRow.VolumeLabel">
+            <summary>
+            Gets or sets the volume label for this media row.
+            </summary>
+            <value>Volume label.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.MediaRow.Source">
+            <summary>
+            Gets or sets the source for this media row.
+            </summary>
+            <value>Source.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.PropertyRow">
+            <summary>
+            Specialization of a row for the Property table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.PropertyRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates an Property row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this Upgrade row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.PropertyRow.Property">
+            <summary>
+            Gets and sets the property name for the row.
+            </summary>
+            <value>Property identifier for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.PropertyRow.Value">
+            <summary>
+            Gets and sets the property value for the row.
+            </summary>
+            <value>Property value for the row.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.SummaryInfoRowCollection">
+            <summary>
+            Indexed container class for summary information rows.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.SummaryInfoRowCollection.#ctor(WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates the keyed collection from existing rows in a table.
+            </summary>
+            <param name="table">The summary information table to index.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.SummaryInfoRowCollection.GetKeyForItem(WixToolset.Data.WindowsInstaller.Row)">
+            <summary>
+            Gets the summary property ID for the <paramref name="row"/>.
+            </summary>
+            <param name="row">The row to index.</param>
+            <returns>The summary property ID for the <paramref name="row"/>.</returns>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow">
+            <summary>
+            Specialization of a row for the upgrade table.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.#ctor(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates an Upgrade row that belongs to a table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">Table this Upgrade row belongs to and should get its column definitions from.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.UpgradeCode">
+            <summary>
+            Gets and sets the upgrade code for the row.
+            </summary>
+            <value>Upgrade code for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.VersionMin">
+            <summary>
+            Gets and sets the version minimum for the row.
+            </summary>
+            <value>Version minimum for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.VersionMax">
+            <summary>
+            Gets and sets the version maximum for the row.
+            </summary>
+            <value>Version maximum for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.Language">
+            <summary>
+            Gets and sets the language for the row.
+            </summary>
+            <value>Language for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.Attributes">
+            <summary>
+            Gets and sets the attributes for the row.
+            </summary>
+            <value>Attributes for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.Remove">
+            <summary>
+            Gets and sets the remove code for the row.
+            </summary>
+            <value>Remove code for the row.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Rows.UpgradeRow.ActionProperty">
+            <summary>
+            Gets and sets the action property for the row.
+            </summary>
+            <value>Action property for the row.</value>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.SequenceTableExtensions">
+            <summary>
+            Enhancements to the SequenceTable enum.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.SequenceTableExtensions.WindowsInstallerTableName(WixToolset.Data.Symbols.SequenceTable)">
+            <summary>
+            Gets the SequenceTable enum as the Windows Installer table name.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.SubStorage">
+            <summary>
+            Substorage inside an output.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.SubStorage.#ctor(System.String,WixToolset.Data.WindowsInstaller.WindowsInstallerData)">
+            <summary>
+            Instantiate a new substorage.
+            </summary>
+            <param name="name">The substorage name.</param>
+            <param name="data">The substorage data.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.SubStorage.Name">
+            <summary>
+            Gets the substorage name.
+            </summary>
+            <value>The substorage name.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.SubStorage.Data">
+            <summary>
+            Gets the substorage data.
+            </summary>
+            <value>The substorage data.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.SubStorage.Read(System.Xml.XmlReader,WixToolset.Data.WindowsInstaller.TableDefinitionCollection)">
+            <summary>
+            Creates a SubStorage from the XmlReader.
+            </summary>
+            <param name="reader">Reader to get data from.</param>
+            <param name="tableDefinitions">Table definitions to use for strongly-typed rows.</param>
+            <returns>New SubStorage object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.SubStorage.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a SubStorage in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the SubStorage should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.Table">
+            <summary>
+            Object that represents a table in a database.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Table.#ctor(WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Creates a table.
+            </summary>
+            <param name="tableDefinition">Definition of the table.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Table.Definition">
+            <summary>
+            Gets the table definition.
+            </summary>
+            <value>Definition of the table.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Table.Name">
+            <summary>
+            Gets the name of the table.
+            </summary>
+            <value>Name of the table.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Table.Operation">
+            <summary>
+            Gets or sets the table transform operation.
+            </summary>
+            <value>The table transform operation.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.Table.Rows">
+            <summary>
+            Gets the rows contained in the table.
+            </summary>
+            <value>Rows contained in the table.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Table.CreateRow(WixToolset.Data.SourceLineNumber)">
+            <summary>
+            Creates a new row and adds it to the table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <returns>Row created in table.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Table.ValidateRows">
+            <summary>
+            Validates the rows of this OutputTable and throws if it collides on
+            primary keys.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Table.Read(System.Xml.XmlReader,WixToolset.Data.WindowsInstaller.TableDefinitionCollection)">
+            <summary>
+            Parse a table from the xml.
+            </summary>
+            <param name="reader">XmlReader where the intermediate is persisted.</param>
+            <param name="tableDefinitions">TableDefinitions to use in the intermediate.</param>
+            <returns>The parsed table.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.Table.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a row in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Row should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.TableDefinition">
+            <summary>
+            Definition of a table in a database.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.TableDefinition.MaxColumnsInRealTable">
+            <summary>
+            Tracks the maximum number of columns supported in a real table.
+            This is a Windows Installer limitation.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinition.#ctor(System.String,WixToolset.Data.IntermediateSymbolDefinition,System.Collections.Generic.IEnumerable{WixToolset.Data.WindowsInstaller.ColumnDefinition},System.Boolean,System.Boolean,System.Type)">
+            <summary>
+            Creates a table definition.
+            </summary>
+            <param name="name">Name of table to create.</param>
+            <param name="symbolDefinition">Optional symbol definition for this table.</param>
+            <param name="columns">Column definitions for the table.</param>
+            <param name="unreal">Flag if table is unreal.</param>
+            <param name="symbolIdIsPrimaryKey">Whether the primary key is the id of the symbol definition associated with this table.</param>
+            <param name="strongRowType">The specialized type for the rows.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinition.Name">
+            <summary>
+            Gets the name of the table.
+            </summary>
+            <value>Name of the table.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinition.SymbolDefinition">
+            <summary>
+            Gets the symbol definition associated with this table.
+            </summary>
+            <value>The symbol definition.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinition.Unreal">
+            <summary>
+            Gets if the table is unreal.
+            </summary>
+            <value>Flag if table is unreal.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinition.Columns">
+            <summary>
+            Gets the collection of column definitions for this table.
+            </summary>
+            <value>Collection of column definitions for this table.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinition.SymbolIdIsPrimaryKey">
+            <summary>
+            Gets if the primary key is the id of the symbol definition associated with this table.
+            </summary>
+            <value>Flag if table is unreal.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinition.Item(System.Int32)">
+            <summary>
+            Gets the column definition in the table by index.
+            </summary>
+            <param name="columnIndex">Index of column to locate.</param>
+            <value>Column definition in the table by index.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinition.CreateRow(WixToolset.Data.SourceLineNumber)">
+            <summary>
+            In general this method shouldn't be used - create rows from a Table instead.
+            Creates a new row object of the type specified in this definition.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <returns>Created row.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinition.CreateRow(WixToolset.Data.SourceLineNumber,WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Creates a new row object of the type specified in this definition for the given table.
+            External callers should create the row from the table.
+            </summary>
+            <param name="sourceLineNumbers">Original source lines for this row.</param>
+            <param name="table">The owning table for this row.</param>
+            <returns>Created row.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinition.CompareTo(WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Compares this table definition to another table definition.
+            </summary>
+            <remarks>
+            Only Windows Installer traits are compared, allowing for updates to WiX-specific table definitions.
+            </remarks>
+            <param name="updated">The updated <see cref="T:WixToolset.Data.WindowsInstaller.TableDefinition"/> to compare with this target definition.</param>
+            <returns>0 if the tables' core properties are the same; otherwise, non-0.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinition.Read(System.Xml.XmlReader,WixToolset.Data.WindowsInstaller.TableDefinitionCollection)">
+            <summary>
+            Parses table definition from xml reader.
+            </summary>
+            <param name="reader">Reader to get data from.</param>
+            <param name="tableDefinitions">Table definitions to use for strongly-typed rows.</param>
+            <returns>The TableDefintion represented by the Xml.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinition.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists an output in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Output should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.TableDefinitionCollection">
+            <summary>
+            Collection for table definitions indexed by table name.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.#ctor">
+            <summary>
+            Instantiate a new TableDefinitionCollection class.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.#ctor(WixToolset.Data.WindowsInstaller.TableDefinitionCollection)">
+            <summary>
+            Creates a shallow copy of the provided table definition collection.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.#ctor(System.Collections.Generic.IEnumerable{WixToolset.Data.WindowsInstaller.TableDefinition})">
+            <summary>
+            Creates a table definition collection with the given table definitions.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+            <value>Number of items in collection.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.IsReadOnly">
+            <summary>
+            Table definition collections are never read-only.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Item(System.String)">
+            <summary>
+            Gets a table definition by name.
+            </summary>
+            <param name="tableName">Name of table to locate.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.TryGet(System.String,WixToolset.Data.WindowsInstaller.TableDefinition@)">
+            <summary>
+            Tries to get a table definition by name.
+            </summary>
+            <param name="tableName">Name of table to locate.</param>
+            <param name="table">Table definition if found.</param>
+            <returns>True if table definition was found otherwise false.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Add(WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Adds a table definition to the collection.
+            </summary>
+            <param name="tableDefinition">Table definition to add to the collection.</param>
+            <value>Indexes by table definition name.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Clear">
+            <summary>
+            Removes all table definitions from the collection.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Contains(System.String)">
+            <summary>
+            Checks if the collection contains a table name.
+            </summary>
+            <param name="tableName">The table to check in the collection.</param>
+            <returns>True if collection contains the table.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Contains(WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Checks if the collection contains a table.
+            </summary>
+            <param name="table">The table to check in the collection.</param>
+            <returns>True if collection contains the table.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.CopyTo(WixToolset.Data.WindowsInstaller.TableDefinition[],System.Int32)">
+            <summary>
+            Copies table definitions to an arry.
+            </summary>
+            <param name="array">Array to copy the table definitions to.</param>
+            <param name="index">Index in the array to start copying at.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Remove(WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Removes a table definition from the collection.
+            </summary>
+            <param name="table">Table to remove from the collection.</param>
+            <returns>True if the table definition existed in the collection and was removed.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.GetEnumerator">
+            <summary>
+            Gets enumerator for the collection.
+            </summary>
+            <returns>Enumerator for the collection.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets the untyped enumerator for the collection.
+            </summary>
+            <returns>Untyped enumerator for the collection.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Read(System.Xml.XmlReader,WixToolset.Data.WindowsInstaller.TableDefinitionCollection)">
+            <summary>
+            Loads a collection of table definitions from a XmlReader in memory.
+            </summary>
+            <param name="reader">Reader to get data from.</param>
+            <param name="tableDefinitions">Table definitions to use for strongly-typed rows.</param>
+            <returns>The TableDefinitionCollection represented by the xml.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableDefinitionCollection.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists a TableDefinitionCollection in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the TableDefinitionCollection should persist itself as XML.</param>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.TableIndexedCollection">
+            <summary>
+            Collection for tables.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.#ctor">
+            <summary>
+            Instantiate a new empty collection.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.#ctor(System.Collections.Generic.IEnumerable{WixToolset.Data.WindowsInstaller.Table})">
+            <summary>
+            Instantiate a new collection populated with a set of tables.
+            </summary>
+            <param name="tables">Set of tables.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Count">
+            <summary>
+            Gets the number of items in the collection.
+            </summary>
+            <value>Number of items in collection.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableIndexedCollection.IsReadOnly">
+            <summary>
+            Table indexed collection is never read only.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Add(WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Adds a table to the collection.
+            </summary>
+            <param name="table">Table to add to the collection.</param>
+            <remarks>Indexes the table by name.</remarks>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Clear">
+            <summary>
+            Clear the tables from the collection.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Contains(WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Determines if a table is in the collection.
+            </summary>
+            <param name="table">Table to check if it is in the collection.</param>
+            <returns>True if the table name is in the collection, otherwise false.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.CopyTo(WixToolset.Data.WindowsInstaller.Table[],System.Int32)">
+            <summary>
+            Copies the collection into an array.
+            </summary>
+            <param name="array">Array to copy the collection into.</param>
+            <param name="arrayIndex">Index to start copying from.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Remove(System.String)">
+            <summary>
+            Remove a table from the collection by name.
+            </summary>
+            <param name="tableName">Table name to remove from the collection.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Remove(WixToolset.Data.WindowsInstaller.Table)">
+            <summary>
+            Remove a table from the collection.
+            </summary>
+            <param name="table">Table with matching name to remove from the collection.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.GetEnumerator">
+            <summary>
+            Gets an enumerator over the whole collection.
+            </summary>
+            <returns>Collection enumerator.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Gets an untyped enumerator over the whole collection.
+            </summary>
+            <returns>Untyped collection enumerator.</returns>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.TableIndexedCollection.Item(System.String)">
+            <summary>
+            Gets a table by name.
+            </summary>
+            <param name="tableName">Name of table to locate.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.TableIndexedCollection.TryGetTable(System.String,WixToolset.Data.WindowsInstaller.Table@)">
+            <summary>
+            Tries to find a table by name.
+            </summary>
+            <param name="tableName">Table name to locate.</param>
+            <param name="table">Found table.</param>
+            <returns>True if table with table name was found, otherwise false.</returns>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.TableOperation">
+            <summary>
+            The table transform operations.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.TableOperation.None">
+            <summary>
+            No operation.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.TableOperation.Add">
+            <summary>
+            Added table.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.TableOperation.Drop">
+            <summary>
+            Dropped table.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.WindowsInstallerData">
+            <summary>
+            Output is generated by the linker.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.#ctor(WixToolset.Data.SourceLineNumber)">
+            <summary>
+            Creates a new empty output object.
+            </summary>
+            <param name="sourceLineNumbers">The source line information for the output.</param>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Type">
+            <summary>
+            Gets the type of the output.
+            </summary>
+            <value>Type of the output.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Codepage">
+            <summary>
+            Gets or sets the codepage for this output.
+            </summary>
+            <value>Codepage of the output.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.WindowsInstallerData.SourceLineNumbers">
+            <summary>
+            Gets the source line information for this output.
+            </summary>
+            <value>The source line information for this output.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.WindowsInstallerData.SubStorages">
+            <summary>
+            Gets the substorages in this output.
+            </summary>
+            <value>The substorages in this output.</value>
+        </member>
+        <member name="P:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Tables">
+            <summary>
+            Gets the tables contained in this output.
+            </summary>
+            <value>Collection of tables.</value>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.EnsureTable(WixToolset.Data.WindowsInstaller.TableDefinition)">
+            <summary>
+            Ensure this output contains a particular table.
+            </summary>
+            <param name="tableDefinition">Definition of the table that should exist.</param>
+            <returns>The table in this output.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Save(WixToolset.Data.WixOutput)">
+            <summary>
+            Saves an output to a <c>WixOutput</c> container.
+            </summary>
+            <param name="wixout">Container to save to.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Save(System.Xml.XmlWriter)">
+            <summary>
+            Saves an output to an <c>XmlWriter</c>.
+            </summary>
+            <param name="writer">XmlWriter to save to.</param>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.TryGetTable(System.String,WixToolset.Data.WindowsInstaller.Table@)">
+            <summary>
+            Gets table by name.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Load(System.String,System.Boolean)">
+            <summary>
+            Loads an output from a path on disk.
+            </summary>
+            <param name="path">Path to output file saved on disk.</param>
+            <param name="suppressVersionCheck">Suppresses wix.dll version mismatch check.</param>
+            <returns>Output object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Load(System.String,WixToolset.Data.WindowsInstaller.TableDefinitionCollection,System.Boolean)">
+            <summary>
+            Loads an output from a path on disk.
+            </summary>
+            <param name="path">Path to output file saved on disk.</param>
+            <param name="tableDefinitions">Table definitions to use for creating strongly-typed rows.</param>
+            <param name="suppressVersionCheck">Suppresses wix.dll version mismatch check.</param>
+            <returns>Output object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Load(WixToolset.Data.WixOutput,System.Boolean)">
+            <summary>
+            Loads an output from a WixOutput object.
+            </summary>
+            <param name="wixOutput">WixOutput object.</param>
+            <param name="suppressVersionCheck">Suppresses wix.dll version mismatch check.</param>
+            <returns>Output object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Load(WixToolset.Data.WixOutput,WixToolset.Data.WindowsInstaller.TableDefinitionCollection,System.Boolean)">
+            <summary>
+            Loads an output from a WixOutput object.
+            </summary>
+            <param name="wixOutput">WixOutput object.</param>
+            <param name="tableDefinitions">Table definitions to use for creating strongly-typed rows.</param>
+            <param name="suppressVersionCheck">Suppresses wix.dll version mismatch check.</param>
+            <returns>Output object.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Read(System.Xml.XmlReader,WixToolset.Data.WindowsInstaller.TableDefinitionCollection,System.Boolean)">
+            <summary>
+            Processes an XmlReader and builds up the output object.
+            </summary>
+            <param name="reader">Reader to get data from.</param>
+            <param name="tableDefinitions">Table definitions to use for creating strongly-typed rows.</param>
+            <param name="suppressVersionCheck">Suppresses wix.dll version mismatch check.</param>
+            <returns>The Output represented by the Xml.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerData.Write(System.Xml.XmlWriter)">
+            <summary>
+            Persists an output in an XML format.
+            </summary>
+            <param name="writer">XmlWriter where the Output should persist itself as XML.</param>
+        </member>
+        <member name="F:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.standardProperties">
+            <summary>
+            References:
+            Title:   Property Reference [Windows Installer]:
+            URL:     http://msdn.microsoft.com/library/en-us/msi/setup/property_reference.asp
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.IsStandardAction(System.String)">
+            <summary>
+            Find out if an action is a standard action.
+            </summary>
+            <param name="actionName">Name of the action.</param>
+            <returns>true if the action is standard, false otherwise.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.StandardActions">
+            <summary>
+            Standard actions.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.StandardDirectoryIds">
+            <summary>
+            Standard directory identifiers.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.GetPlatformSpecificDirectoryId(System.String,WixToolset.Data.Platform)">
+            <summary>
+            Gets the platform specific directory id for a directory. Most directories are not platform
+            specific and return themselves.
+            </summary>
+            <param name="directoryId">Directory id to get platform specific.</param>
+            <param name="platform">Platform to use.</param>
+            <returns>Platform specific directory id.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.IsStandardDirectory(System.String)">
+            <summary>
+            Find out if a directory is a standard directory.
+            </summary>
+            <param name="directoryId">Name of the directory.</param>
+            <returns>true if the directory is standard, false otherwise.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.IsStandardProperty(System.String)">
+            <summary>
+            Find out if a property is a standard property.
+            </summary>
+            <param name="propertyName">Name of the property.</param>
+            <returns>true if a property is standard, false otherwise.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.TryGetStandardAction(System.String,WixToolset.Data.Symbols.WixActionSymbol@)">
+            <summary>
+            Try to get standard action by id.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.TryGetStandardAction(System.String,System.String,WixToolset.Data.Symbols.WixActionSymbol@)">
+            <summary>
+            Try to get standard action by sequence and action name.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WindowsInstallerStandard.TryGetStandardDirectoryName(System.String,System.String@)">
+            <summary>
+            Try to get standard directory name by id.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.WindowsInstaller.WixMissingTableDefinitionException">
+            <summary>
+            Exception thrown when a table definition is missing.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WindowsInstaller.WixMissingTableDefinitionException.#ctor(WixToolset.Data.Message)">
+            <summary>
+            Instantiate new WixMissingTableDefinitionException.
+            </summary>
+            <param name="error">Localized error information.</param>
+        </member>
+        <member name="T:WixToolset.Data.WixCorruptFileException">
+            <summary>
+            Exception when file does not match the expected format.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WixCorruptFileException.FileFormat">
+            <summary>
+            Gets the actual file format found in the file.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WixCorruptFileException.Path">
+            <summary>
+            Gets the path to the file with unexpected format.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.WixException">
+            <summary>
+            Base class for all WiX exceptions.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WixException.#ctor">
+            <summary>
+            Instantiate a new WixException.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WixException.#ctor(System.String)">
+            <summary>
+            Instantiate a new WixException with a simple string message.
+            </summary>
+            <param name="message">Simple string message.</param>
+        </member>
+        <member name="M:WixToolset.Data.WixException.#ctor(System.String,System.Exception)">
+            <summary>
+            Instantiate a new WixException with a simple message and exception.
+            </summary>
+            <param name="message">Simple string message.</param>
+            <param name="innerException">Inner exception.</param>
+        </member>
+        <member name="M:WixToolset.Data.WixException.#ctor(WixToolset.Data.Message)">
+            <summary>
+            Instantiate a new WixException with a given WixError.
+            </summary>
+            <param name="error">The localized error information.</param>
+        </member>
+        <member name="M:WixToolset.Data.WixException.#ctor(WixToolset.Data.Message,System.Exception)">
+            <summary>
+            Instantiate a new WixException with a given WixError.
+            </summary>
+            <param name="error">The localized error information.</param>
+            <param name="exception">Original exception.</param>
+        </member>
+        <member name="P:WixToolset.Data.WixException.Error">
+            <summary>
+            Gets the error message.
+            </summary>
+            <value>The error message.</value>
+        </member>
+        <member name="T:WixToolset.Data.WixOutput">
+            <summary>
+            Class that understands the standard file structure of the WiX toolset.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WixOutput.Uri">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Create">
+            <summary>
+            Creates a new file structure in memory.
+            </summary>
+            <returns>Newly created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Create(System.String)">
+            <summary>
+            Creates a new file structure on disk.
+            </summary>
+            <param name="path">Path to write file structure to.</param>
+            <returns>Newly created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Create(System.Uri,System.IO.Stream)">
+            <summary>
+            Creates a new file structure.
+            </summary>
+            <param name="uri"></param>
+            <param name="stream">Stream to write the file structure to.</param>
+            <returns>Newly created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Read(System.String)">
+            <summary>
+            Loads a wixout from a path on disk.
+            </summary>
+            <param name="path">Path to wixout file saved on disk.</param>
+            <returns>Loaded created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Read(System.Uri)">
+            <summary>
+            Loads a wixout from a path on disk or embedded resource in assembly.
+            </summary>
+            <param name="baseUri">Uri with local path to wixout file saved on disk or embedded resource in assembly.</param>
+            <returns>Loaded created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Read(System.Reflection.Assembly,System.String)">
+            <summary>
+            Loads a wixout from an assembly resource stream.
+            </summary>
+            <param name="assembly"></param>
+            <param name="resourceName"></param>
+            <returns>Loaded created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Read(System.Uri,System.IO.Stream)">
+            <summary>
+            Reads a file structure from an open stream.
+            </summary>
+            <param name="uri"></param>
+            <param name="stream">Stream to read from.</param>
+            <returns>Loaded created <c>WixOutput</c>.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Reopen(System.Boolean)">
+            <summary>
+            Reopen the underlying archive for read-only or read-write access.
+            </summary>
+            <param name="writable">Indicates whether the output can be modified. Defaults to false.</param>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.ExtractEmbeddedFile(System.String,System.String)">
+            <summary>
+            Extracts an embedded file.
+            </summary>
+            <param name="embeddedId">Id to the file to extract.</param>
+            <param name="outputPath">Path to write the extracted file to.</param>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.CreateDataStream(System.String)">
+            <summary>
+            Creates a data stream in the wixout.
+            </summary>
+            <returns>Stream to the data of the file.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.ImportDataStream(System.String,System.String)">
+            <summary>
+            Imports a file from disk into the output.
+            </summary>
+            <param name="name">Name of the stream in the output.</param>
+            <param name="path">Path to file on disk to include in the output.</param>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.GetDataStream(System.String)">
+            <summary>
+            Gets a non-closing stream to the data of the file.
+            </summary>
+            <returns>Stream to the data of the file.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.GetData(System.String)">
+            <summary>
+            Gets the data of the file as a string.
+            </summary>
+            <returns>String contents data of the file.</returns>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Dispose">
+            <summary>
+            Disposes of the internal state of the file structure.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WixOutput.Dispose(System.Boolean)">
+            <summary>
+            Disposes of the internsl state of the file structure.
+            </summary>
+            <param name="disposing">True if disposing.</param>
+        </member>
+        <member name="T:WixToolset.Data.WixStandardLibrary">
+            <summary>
+            WiX Standard Library implementation.
+            </summary>
+        </member>
+        <member name="M:WixToolset.Data.WixStandardLibrary.Build(WixToolset.Data.Platform)">
+            <summary>
+            Build the wixstd.wixlib Intermediate.
+            </summary>
+            <param name="platform">Target platform for the wixstd.wixlib</param>
+            <returns>Intermediate containing the wixstd.wixlib.</returns>
+        </member>
+        <member name="T:WixToolset.Data.WixStandardLibraryIdentifiers">
+            <summary>
+            Well-known identifier names from the wixstd.wixlib.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WixStandardLibraryIdentifiers.WixStandardPackageReferences">
+            <summary>
+            WiX Standard references for packages.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WixStandardLibraryIdentifiers.WixStandardModuleReferences">
+            <summary>
+            WiX Standard references for modules.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WixStandardLibraryIdentifiers.DefaultFeatureName">
+            <summary>
+            Default feature name.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.WixStandardLibraryIdentifiers.WixStandardLocalizationStrings">
+            <summary>
+            WiX Standard localization strings.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.WixUnexpectedFileFormatException">
+            <summary>
+            Exception when file does not match the expected format.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WixUnexpectedFileFormatException.ExpectedFileFormat">
+            <summary>
+            Gets the expected file format.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WixUnexpectedFileFormatException.FileFormat">
+            <summary>
+            Gets the actual file format found in the file.
+            </summary>
+        </member>
+        <member name="P:WixToolset.Data.WixUnexpectedFileFormatException.Path">
+            <summary>
+            Gets the path to the file with unexpected format.
+            </summary>
+        </member>
+        <member name="T:WixToolset.Data.YesNoDefaultType">
+            <summary>
+            Yes, No, Default xml simple type.
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoDefaultType.IllegalValue">
+            <summary>Not a valid yes, no or default value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoDefaultType.NotSet">
+            <summary>Value not set; equivalent to null for reference types.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoDefaultType.No">
+            <summary>The no value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoDefaultType.Yes">
+            <summary>The yes value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoDefaultType.Default">
+            <summary>The default value.</summary>
+        </member>
+        <member name="T:WixToolset.Data.YesNoType">
+            <summary>
+            Yes/no type (kinda like a boolean).
+            </summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoType.IllegalValue">
+            <summary>Not a valid yes or no value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoType.NotSet">
+            <summary>Value not set; equivalent to null for reference types.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoType.No">
+            <summary>The no value.</summary>
+        </member>
+        <member name="F:WixToolset.Data.YesNoType.Yes">
+            <summary>The yes value.</summary>
+        </member>
+        <member name="T:SimpleJson.JsonArray">
+            <summary>
+            Represents the json array.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonArray.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonArray.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleJson.JsonArray"/> class. 
+            </summary>
+            <param name="capacity">The capacity of the json array.</param>
+        </member>
+        <member name="M:SimpleJson.JsonArray.ToString">
+            <summary>
+            The json representation of the array.
+            </summary>
+            <returns>The json representation of the array.</returns>
+        </member>
+        <member name="T:SimpleJson.JsonObject">
+            <summary>
+            Represents the json object.
+            </summary>
+        </member>
+        <member name="F:SimpleJson.JsonObject._members">
+            <summary>
+            The internal member dictionary.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.#ctor">
+            <summary>
+            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.#ctor(System.Collections.Generic.IEqualityComparer{System.String})">
+            <summary>
+            Initializes a new instance of <see cref="T:SimpleJson.JsonObject"/>.
+            </summary>
+            <param name="comparer">The <see cref="T:System.Collections.Generic.IEqualityComparer`1"/> implementation to use when comparing keys, or null to use the default <see cref="T:System.Collections.Generic.EqualityComparer`1"/> for the type of the key.</param>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Item(System.Int32)">
+            <summary>
+            Gets the <see cref="T:System.Object"/> at the specified index.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Add(System.String,System.Object)">
+            <summary>
+            Adds the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:SimpleJson.JsonObject.ContainsKey(System.String)">
+            <summary>
+            Determines whether the specified key contains key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns>
+                <c>true</c> if the specified key contains key; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Keys">
+            <summary>
+            Gets the keys.
+            </summary>
+            <value>The keys.</value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Remove(System.String)">
+            <summary>
+            Removes the specified key.
+            </summary>
+            <param name="key">The key.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.TryGetValue(System.String,System.Object@)">
+            <summary>
+            Tries the get value.
+            </summary>
+            <param name="key">The key.</param>
+            <param name="value">The value.</param>
+            <returns></returns>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Values">
+            <summary>
+            Gets the values.
+            </summary>
+            <value>The values.</value>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Item(System.String)">
+            <summary>
+            Gets or sets the <see cref="T:System.Object"/> with the specified key.
+            </summary>
+            <value></value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Add(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Adds the specified item.
+            </summary>
+            <param name="item">The item.</param>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Clear">
+            <summary>
+            Clears this instance.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Contains(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Determines whether [contains] [the specified item].
+            </summary>
+            <param name="item">The item.</param>
+            <returns>
+            	<c>true</c> if [contains] [the specified item]; otherwise, <c>false</c>.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.CopyTo(System.Collections.Generic.KeyValuePair{System.String,System.Object}[],System.Int32)">
+            <summary>
+            Copies to.
+            </summary>
+            <param name="array">The array.</param>
+            <param name="arrayIndex">Index of the array.</param>
+        </member>
+        <member name="P:SimpleJson.JsonObject.Count">
+            <summary>
+            Gets the count.
+            </summary>
+            <value>The count.</value>
+        </member>
+        <member name="P:SimpleJson.JsonObject.IsReadOnly">
+            <summary>
+            Gets a value indicating whether this instance is read only.
+            </summary>
+            <value>
+            	<c>true</c> if this instance is read only; otherwise, <c>false</c>.
+            </value>
+        </member>
+        <member name="M:SimpleJson.JsonObject.Remove(System.Collections.Generic.KeyValuePair{System.String,System.Object})">
+            <summary>
+            Removes the specified item.
+            </summary>
+            <param name="item">The item.</param>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.GetEnumerator">
+            <summary>
+            Gets the enumerator.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.System#Collections#IEnumerable#GetEnumerator">
+            <summary>
+            Returns an enumerator that iterates through a collection.
+            </summary>
+            <returns>
+            An <see cref="T:System.Collections.IEnumerator"/> object that can be used to iterate through the collection.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.JsonObject.ToString">
+            <summary>
+            Returns a json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </summary>
+            <returns>
+            A json <see cref="T:System.String"/> that represents the current <see cref="T:System.Object"/>.
+            </returns>
+        </member>
+        <member name="T:SimpleJson.SimpleJson">
+            <summary>
+            This class encodes and decodes JSON strings.
+            Spec. details, see https://www.json.org/
+            
+            JSON uses Arrays and Objects. These correspond here to the datatypes JsonArray(IList&lt;object>) and JsonObject(IDictionary&lt;string,object>).
+            All numbers are parsed to doubles.
+            </summary>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.DeserializeObject(System.String)">
+            <summary>
+            Parses the string json into a value
+            </summary>
+            <param name="json">A JSON string.</param>
+            <returns>An IList&lt;object>, a IDictionary&lt;string,object>, a double, a string, null, true, or false</returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.TryDeserializeObject(System.String,System.Object@)">
+            <summary>
+            Try parsing the json string into a value.
+            </summary>
+            <param name="json">
+            A JSON string.
+            </param>
+            <param name="obj">
+            The object.
+            </param>
+            <returns>
+            Returns true if successfull otherwise false.
+            </returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.SerializeObject(System.Object,SimpleJson.IJsonSerializerStrategy)">
+            <summary>
+            Converts a IDictionary&lt;string,object> / IList&lt;object> object into a JSON string
+            </summary>
+            <param name="json">A IDictionary&lt;string,object> / IList&lt;object></param>
+            <param name="jsonSerializerStrategy">Serializer strategy to use</param>
+            <returns>A JSON encoded string, or null if object 'json' is not serializable</returns>
+        </member>
+        <member name="M:SimpleJson.SimpleJson.IsNumeric(System.Object)">
+            <summary>
+            Determines if a given object is numeric in any way
+            (can be integer, double, null, etc).
+            </summary>
+        </member>
+    </members>
+</doc>
