@@ -28,7 +28,7 @@ namespace MyCAD.EntryForms
             lFullPath = Path.Combine(lPath, lConnectionString);
             lConnectionParams = ConfigurationManager.AppSettings["SQLiteParams"];
             lConnectionString = string.Format(lConnectionParams, lFullPath);
-            MessageBox.Show(lConnectionString);
+            //MessageBox.Show(lConnectionString);
         }
 
 
