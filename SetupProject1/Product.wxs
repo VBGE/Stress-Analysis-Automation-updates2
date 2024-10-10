@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"><?define Stress Analysis Automation_TargetDir=$(var.Stress Analysis Automation.TargetDir)?>
+	<Product Id="*" Name="SetupProject1" Language="1033" Version="1.0.0.0" Manufacturer="General Electric" UpgradeCode="69a72467-dd3d-4bf3-8cd7-7bd1288e99c9">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="SetupProject1" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="_x86_files" />
+			<ComponentGroupRef Id="_x64_files" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="SetupProject1">
+				  <Directory Id="_x86" Name="x86" />
+				  <Directory Id="_x64" Name="x64" />
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+			<Component Id="MyCAD.exe" Guid="e95f982b-5ad8-422a-8532-2eef6679b50d">
+			  <File Id="MyCAD.exe" Name="MyCAD.exe" Source="$(var.Stress Analysis Automation_TargetDir)MyCAD.exe" />
+			</Component>
+			<Component Id="MyCAD.exe.config" Guid="c1897f3f-8c4d-411f-bf62-39ec48b3cc24">
+			  <File Id="MyCAD.exe.config" Name="MyCAD.exe.config" Source="$(var.Stress Analysis Automation_TargetDir)MyCAD.exe.config" />
+			</Component>
+			<Component Id="System.Windows.Forms.Ribbon.dll" Guid="d0a34cdf-62be-4a49-ab0f-84ccf2b529a2">
+			  <File Id="System.Windows.Forms.Ribbon.dll" Name="System.Windows.Forms.Ribbon.dll" Source="$(var.Stress Analysis Automation_TargetDir)System.Windows.Forms.Ribbon.dll" />
+			</Component>
+			<Component Id="System.Data.SQLite.dll" Guid="a7c9f792-1093-4f58-a9cb-f7a770dcbfb5">
+			  <File Id="System.Data.SQLite.dll" Name="System.Data.SQLite.dll" Source="$(var.Stress Analysis Automation_TargetDir)System.Data.SQLite.dll" />
+			</Component>
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+	  <ComponentGroup Id="_x86_files" Directory="_x86">
+	    <Component Id="x86_sqlite3.dll" Guid="398f5a4b-5604-4c76-841b-25a2ac5c3411">
+	      <File Id="x86_sqlite3.dll" Name="sqlite3.dll" Source="$(var.Stress Analysis Automation_TargetDir)x86\sqlite3.dll" />
+	    </Component>
+	    <Component Id="x86_SQLite.Interop.dll" Guid="4ff89e55-c050-4889-bc9a-278c7df856b1">
+	      <File Id="x86_SQLite.Interop.dll" Name="SQLite.Interop.dll" Source="$(var.Stress Analysis Automation_TargetDir)x86\SQLite.Interop.dll" />
+	    </Component>
+	  </ComponentGroup>
+	</Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="_x64_files" Directory="_x64">
+      <Component Id="x64_sqlite3.dll" Guid="c7f5a177-10cb-4e54-9b23-d90b0ee73f18">
+        <File Id="x64_sqlite3.dll" Name="sqlite3.dll" Source="$(var.Stress Analysis Automation_TargetDir)x64\sqlite3.dll" />
+      </Component>
+      <Component Id="x64_SQLite.Interop.dll" Guid="79e36ae4-ea65-4838-8522-f19421450246">
+        <File Id="x64_SQLite.Interop.dll" Name="SQLite.Interop.dll" Source="$(var.Stress Analysis Automation_TargetDir)x64\SQLite.Interop.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  
+  <Fragment>
+    <ComponentGroup Id="ConfigComponent" Directory="INSTALLFOLDER">
+      <Component Id="AppConfig" Guid="46AB3578-E340-47AD-A819-795527332A9A">
+        <CreateFolder />
+        <util:XmlFile Id="SetDatabasePath"
+                                     File="[INSTALLFOLDER]\ClearanceAnalysis.UI.exe.config"
+                                     Action="setValue"
+                                     ElementPath="//configuration/connectionStrings/add[\[]@name='SQLiteConnection'[\]]"
+                                     Name="connectionString"
+                                     Value="Data Source=[INSTALLFOLDER]SQLite\ClearanceAnalysisDB.db;Version=3;Pooling=True;Max Pool Size=100;" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>

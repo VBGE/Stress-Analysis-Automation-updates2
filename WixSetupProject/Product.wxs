@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="
+http://schemas.microsoft.com/wix/UtilExtension">><?define Stress Analysis Automation_TargetDir=$(var.Stress Analysis Automation.TargetDir)?>
+	<Product Id="*" Name="WixSetupProject" Language="1033" Version="1.0.0.0" Manufacturer="General Electric" UpgradeCode="010990a8-720b-4c11-a769-c879f1fb7dab">
+		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+
+		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+		<MediaTemplate />
+
+		<Feature Id="ProductFeature" Title="WixSetupProject" Level="1">
+			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="_x86_files" />
+			<ComponentGroupRef Id="_x64_files" />
+		</Feature>
+	</Product>
+
+	<Fragment>
+		<Directory Id="TARGETDIR" Name="SourceDir">
+			<Directory Id="ProgramFilesFolder">
+				<Directory Id="INSTALLFOLDER" Name="WixSetupProject">
+				  <Directory Id="_x64" Name="x64" />
+				  <Directory Id="_x86" Name="x86" />
+          <Directory Id="SQLiteFiles" Name="SQLiteFiles"/>
+				</Directory>
+			</Directory>
+		</Directory>
+	</Fragment>
+  
+	<Fragment>
+		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+			<!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+			<!-- <Component Id="ProductComponent"> -->
+				<!-- TODO: Insert files, registry keys, and other resources here. -->
+			<!-- </Component> -->
+      
+			<Component Id="System.Windows.Forms.Ribbon.dll" Guid="ff2f4f5f-54bb-49c6-93db-7e7e0635be9b">
+			  <File Id="System.Windows.Forms.Ribbon.dll" Name="System.Windows.Forms.Ribbon.dll" Source="$(var.Stress Analysis Automation_TargetDir)System.Windows.Forms.Ribbon.dll" />
+			</Component>
+			<Component Id="MyCAD.exe.config" Guid="5a472298-be16-4298-b1dd-c9838c4a06d8">
+			  <File Id="MyCAD.exe.config" Name="MyCAD.exe.config" Source="$(var.Stress Analysis Automation_TargetDir)MyCAD.exe.config" />
+			</Component>
+			<Component Id="MyCAD.exe" Guid="d59dbded-4296-48f1-a6e3-1e8829952e3a">
+			  <File Id="MyCAD.exe" Name="MyCAD.exe" Source="$(var.Stress Analysis Automation_TargetDir)MyCAD.exe" />
+			</Component>
+			<Component Id="System.Data.SQLite.dll" Guid="d828dc23-2271-432b-ac88-c90cabff40fb">
+			  <File Id="System.Data.SQLite.dll" Name="System.Data.SQLite.dll" Source="$(var.Stress Analysis Automation_TargetDir)System.Data.SQLite.dll" />
+			</Component>
+
+      <Component Id="AppTables.db" Guid="d828dc23-2271-432b-ac88-c90cabff40fc">
+        <File Id="AppTables.db" Name="AppTables.db" Source="$(var.Stress Analysis Automation_TargetDir)SQLite\Files\AppTables.db" />
+      </Component>
+      
+		</ComponentGroup>
+	</Fragment>
+	<Fragment>
+	  <ComponentGroup Id="_x86_files" Directory="_x86">
+	    <Component Id="x86_sqlite3.dll" Guid="a8a22ccf-296e-4507-b27e-bfa6a6266cff">
+	      <File Id="x86_sqlite3.dll" Name="sqlite3.dll" Source="$(var.Stress Analysis Automation_TargetDir)x86\sqlite3.dll" />
+	    </Component>
+	    <Component Id="x86_SQLite.Interop.dll" Guid="12d70854-c33e-4c49-a76a-0edc9e73a9bf">
+	      <File Id="x86_SQLite.Interop.dll" Name="SQLite.Interop.dll" Source="$(var.Stress Analysis Automation_TargetDir)x86\SQLite.Interop.dll" />
+	    </Component>
+	  </ComponentGroup>
+	</Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="_x64_files" Directory="_x64">
+      <Component Id="x64_sqlite3.dll" Guid="5c6b495d-2ffa-422a-a0d8-633d9f2dc088">
+        <File Id="x64_sqlite3.dll" Name="sqlite3.dll" Source="$(var.Stress Analysis Automation_TargetDir)x64\sqlite3.dll" />
+      </Component>
+      <Component Id="x64_SQLite.Interop.dll" Guid="6c54ae8f-c214-4282-977f-52150a95e749">
+        <File Id="x64_SQLite.Interop.dll" Name="SQLite.Interop.dll" Source="$(var.Stress Analysis Automation_TargetDir)x64\SQLite.Interop.dll" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ConfigComponent" Directory="INSTALLFOLDER">
+      <Component Id="AppConfig" Guid="46AB3578-E340-47AD-A819-795527332A9A">
+        <CreateFolder />
+        <util:XmlFile Id="SetDatabasePath"
+        File="[INSTALLFOLDER]\MyCAD.exe.config"
+        Action="setValue"
+        ElementPath="//configuration/connectionStrings/add[\[]@name='SQLiteConnection'[\]]"
+        Name="connectionString"
+        Value="Data Source=[INSTALLFOLDER]SQLite\Files\AppTables.db;Version=3;Pooling=True;Max Pool Size=100;" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+</Wix>
